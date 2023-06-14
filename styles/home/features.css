@@ -1,0 +1,55 @@
+#features {
+  padding: 3rem 0;
+}
+
+#features h2 {
+  text-align: center;
+  font-size: var(--h2);
+  font-weight: bolder;
+  letter-spacing: -1px;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+#features > .container > div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+#features > .container > div > div {
+  background-color: var(--highlight-light);
+  padding: 2rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+}
+
+#features > .container > div > div::after{
+    content:"Dynamic";
+    position:absolute;
+    right:-45%;
+    top:6%;
+    font-size: 5rem;
+    font-weight: bolder;
+    color:var(--highlight-dark);
+}
+
+#features > .container > div > div > img {
+  width: 4rem;
+  height: 4rem;
+  object-fit: contain;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  margin-bottom: 2rem;
+}
+#features > .container > div > div > h3 {
+  font-size: var(--h3);
+  margin-bottom: 1rem;
+  color: var(--headings);
+}
+#features > .container > div > div > p {
+  font-size: 0.9rem;
+  color: var(--paragraph);
+  line-height: 1.5;
+}

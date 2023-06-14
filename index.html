@@ -4,93 +4,197 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="./styles/home/hero.css" />
+    <link rel="stylesheet" href="./styles/home/discover.css" />
+    <link rel="stylesheet" href="./styles/home/features.css">
     <title>Travelo</title>
   </head>
   <body>
     <header>
       <nav>
-        <img src="./images/Travelo Logo.jpg" alt="Travelo Logo" />
-        <ul>
-          <li>
-            <a href="/" class="link">Home</a>
-            <a href="" class="link">About Us</a>
-          </li>
-          <li>
-            <a href="/" class="link">Destinations</a>
-            <a href="" class="link">Features</a>
-          </li>
-          <li>
-            <a href="/" class="link">Pricing</a>
-            <a href="" class="link">Reviews</a>
-          </li>
-        </ul>
-        <div class="cta">
-          <button class="cta__btn">CONTACT US</button>
-          <img src="./images/icons/cta-btn.png" alt="cta button icon" />
+        <div class="container">
+          <div class="nav">
+            <img src="./images/Travelo Logo.jpg" alt="Travelo Logo" />
+            <ul>
+              <li>
+                <a href="/" class="link">Home</a>
+                <a href="" class="link">About Us</a>
+              </li>
+              <li>
+                <a href="/" class="link">Destinations</a>
+                <a href="" class="link">Features</a>
+              </li>
+              <li>
+                <a href="/" class="link">Pricing</a>
+                <a href="" class="link">Reviews</a>
+              </li>
+            </ul>
+            <div class="cta">
+              <button class="cta__btn">CONTACT US</button>
+              <img src="./images/icons/cta-btn.png" alt="cta button icon" />
+            </div>
+          </div>
         </div>
       </nav>
     </header>
     <main>
-      <section>
-        <h1>Lifelong Mermories Just A Few Days Away</h1>
-        <div>
-          <button>Join With Us</button>
-          <a href="/"
-            >Learn More
-            <img src="./images/icons/chevron-right.svg" alt="right icon"
-          /></a>
-        </div>
-        <div>
-            <img src="./images/tourist-reading-book.jpg" alt="Hero Image" class="hero-img">
-            <caption>What Excites You Most? <hr style="width:100px;display:inline-block;"></caption>
+      <section id="hero">
+        <div class="container">
+          <h1>Lifelong Memories Just A Few Days Away</h1>
+          <div>
+            <button>Join With Us</button>
             <div>
-                <div>
-                    <span>01</span>
-                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Trekking Image">
-                    <div>
-                        <h3>Trekking</h3>
-                        <p>Climbing the tallest mountain in Europe!</p>
-                    </div>
-                </div>
-                <div>
-                    <span>02</span>
-                    <img src="https://images.unsplash.com/photo-1629248457649-b082812aea6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Rafting Image">
-                    <div>
-                        <h3>Rafting</h3>
-                        <p>Let's meet the wildest river and rafting on them!</p>
-                    </div>
-                </div>
-                <div>
-                    <span>03</span>
-                    <img src="https://images.unsplash.com/photo-1562051544-c8a253660284?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1091&q=80" alt="Windsurfing Image">
-                    <div>
-                        <h3>Wind Surfing</h3>
-                        <p>Didn't see the tallest wave on a rainy day?</p>
-                    </div>
-                </div>
+              <a href="/">Learn More</a>
+              <img src="./images/icons/chevron-right.svg" alt="right icon" />
             </div>
+          </div>
+          <div class="hero__content">
+            <img
+              src="./images/Heroimage.png"
+              alt="Hero Image"
+              class="hero-img"
+            />
+            <p>What Excites You Most?</p>
+            <div>
+              <div>
+                <span>01</span>
+                <img
+                  src="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                  alt="Trekking Image"
+                />
+                <div>
+                  <h3>Trekking</h3>
+                  <p>Climbing the tallest mountain in Europe!</p>
+                </div>
+              </div>
+              <div>
+                <span>02</span>
+                <img
+                  src="https://images.unsplash.com/photo-1629248457649-b082812aea6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                  alt="Rafting Image"
+                />
+                <div>
+                  <h3>Rafting</h3>
+                  <p>Let's meet the wildest river and rafting on them!</p>
+                </div>
+              </div>
+              <div>
+                <span>03</span>
+                <img
+                  src="https://images.unsplash.com/photo-1562051544-c8a253660284?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1091&q=80"
+                  alt="Windsurfing Image"
+                />
+                <div>
+                  <h3>Wind Surfing</h3>
+                  <p>Didn't see the tallest wave on a rainy day?</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
-      <section>
-        <h2>Discover the touch of Nature</h2>
-        <div>
-          <div class="card">
-            <button>
-              <img src="./images/icons/map-pin.png" alt="Location Icon">
-              Tanzania
-            </button>
-            <button>
-              <img src="./images/icons/map-pin.png" alt="Location Icon">
-              Colombia
-            </button>
-            <button>
-              <img src="./images/icons/map-pin.png" alt="Location Icon">
-              Bahrain
-            </button>
-            <button>
-              <img src="./images/icons/map-pin.png" alt="Location Icon">
-              Mauritius
-            </button>
+      <section id="discover">
+        <div class="container">
+          <h2>Discover the touch of Nature</h2>
+          <div>
+            <div class="card">
+              <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1121&q=80" class="card__background">
+              <div class="location">
+                <img src="./images/icons/map-pin.png" alt="Location Icon" />
+                <p>Tanzania</p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" class="card__background">
+              <div class="location">
+                <img src="./images/icons/map-pin.png" alt="Location Icon" />
+                <p>Colombia</p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="https://images.unsplash.com/photo-1522509585149-c9cd39d1ff08?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1497&q=80" class="card__background">
+              <div class="location">
+                <img src="./images/icons/map-pin.png" alt="Location Icon" />
+                <p>Bahrain</p>
+              </div>
+            </div>        
+            <div class="card">
+              <img src="https://images.unsplash.com/photo-1518030246977-4accad8a030b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" class="card__background">
+              <div class="location">
+                <img src="./images/icons/map-pin.png" alt="Location Icon" />
+                <p>Mauritius</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="features">
+        <div class="container">
+          <h2>Our Features</h2>
+          <div>
+            <div>
+              <img src="./images/icons/Stack Icon.png">
+
+              <h3>Dynamic Packaging</h3>
+              <p>Dynamic packaging is a method used to package holiday bookings to enable consumers to bulid their package</p>
+            </div>
+            <div>
+              <img src="./images/icons/cross.png">
+
+              <h3>Instant Itinerary</h3>
+              <p>Get a verifiable Flight and Hotel itinerary in less than 5 minutes for your next Visa travel application to the place</p>
+            </div>
+            <div>
+              <img src="./images/icons/Stack Icon.png">
+
+              <h3>Vendor Extant</h3>
+              <p>An integrated decision model for cloud vendor selection using ... of the model are analysed by using sensitivity analysis</p>
+            </div>
+            <div>
+              <img src="./images/icons/box.png">
+
+              <h3>Mutlitple Verticals</h3>
+              <p>A Vertical, also known as a sales vertical or vertical market, is the industry that a company's offerings are specifically</p>
+            </div>
+            <div>
+              <img src="./images/icons/video.png">
+
+              <h3>Blogging Platform</h3>
+              <p>We recommend using a platform, such as Wix or Squarespace. Nethier requires any coding knowledge and each provides</p>
+            </div>
+            <div>
+              <img src="./images/icons/Infinity.png">
+
+              <h3>Language Locales</h3>
+              <p>A locale defines a user language and contains language and country related parameters. Many languages</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="services">
+        <div class="container">
+          <div>
+            <h2>What services we provide</h2>
+            <div>
+              <div>
+                <h3><span>01.</span> Travel Plan</h3>
+                <p>Travel plans are not really an instrument themselves but a delivery mechanism or strategy for mostly others</p>
+              </div>
+              <div>
+                <h3><span>02.</span> Flight Booking</h3>
+                <p>Discover your next dream destination. Find deals on domestic and international flights</p>
+              </div>
+              <div>
+                <h3><span>03.</span> Accomodation</h3>
+                <p>Lodging, food and services or travelling space and related services.</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <img src="https://images.unsplash.com/photo-1553697388-94e804e2f0f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=765&q=80" alt="Passport Image" class="circular__img1">
+            <img src="https://i.pinimg.com/736x/c3/d3/3c/c3d33c9944f7bdbe8b83d932afe1a58a.jpg" alt="Surf Van Image" class="circular__img2">
+            <img src="https://images.unsplash.com/photo-1579991155656-4647abc8d4b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Airplane Image" class="circular__img3">
+            <img src="https://images.unsplash.com/photo-1526918761918-da528d9558c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1076&q=80" alt="Surfboard Image" class="circular__img4">
           </div>
         </div>
       </section>
