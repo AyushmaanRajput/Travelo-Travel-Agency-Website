@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
+:root {
+  /* Colors */
+  --headings: #000000;
+  --background: #f9f9f9;
+  --paragraph: #bababa;
+  --highlight-light: #f6f6f6;
+  --highlight-dark: #f2f2f2;
+  --waves-color: #d58170;
+}
+/* 
+icon1:#EB6A4F;
+icon2:#3D3E83;
+icon3:#3FBE81;https://media.licdn.com/dms/image/C4D0BAQE4VnEuA-t82g/company-logo_200_200/0/1644429446411?e=2147483647&v=beta&t=zcC7HzcexS-Gt_PRpkl-6XZdQig0qxzwyiavd6DmABU
+icon4:#7229E4;
+icon5:##609EEB;
+icon6:#C367B8;https://theme.zdassets.com/theme_assets/613805/20ca47df8103cd19bbad5a9ccc012eb7397d1813.png
+*/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+}
+body > * {
+    width:min(100%, 70rem);
+    margin:1.25rem auto;
+}
+header nav{
+    padding:1rem 0;
+    width: 100%;
+    display:flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-top: 1px solid var(--paragraph);
+}
+header nav ul{
+    display: flex;
+    margin-left: 15rem;
+}
+header nav ul li{
+    display: flex;
+    flex-direction: column;
+    margin-left: 2.5rem;
+    width: 125px;
+    position: relative;
+}
+header nav ul li::before{
+    content:"";
+    width: 1px;
+    height:20px;
+    position: absolute;
+    top:-1rem;
+    left:-1rem;
+    background-color: var(--paragraph);
+}
+header nav ul li a{
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    color: var(--headings);
+}
+header nav .cta{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header nav .cta .cta__btn{
+    border:none;
+    background-color: transparent;
+    letter-spacing: -.5px;
+}
+header nav .cta img{
+    width:2rem;
+    object-fit: cover;
+    margin-left: .5rem;
+    margin-right: auto;
+}
