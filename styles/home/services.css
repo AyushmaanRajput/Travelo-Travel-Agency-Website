@@ -1,0 +1,114 @@
+#services{
+    padding:5rem 0;
+}
+#services .container{
+    display:flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+#services .container h2{
+    font-size: var(--h2);
+    font-weight: bolder;
+    letter-spacing: -1px;
+    margin-bottom: 3rem;
+    line-height: 1;
+}
+
+#services .container >div{
+    width:50%;
+}
+#services .container >div:first-of-type>div{
+
+    display:flex;
+    flex-direction: column;
+}
+#services .container >div:first-of-type>div>*{
+    margin-bottom: 2rem;
+}
+#services .container>div:first-of-type>div span{
+    font-weight: 400;
+}
+#services .container>div:first-of-type>div h3{
+    font-size: var(--h3);
+    margin-bottom: 0.5rem;
+}
+#services .container>div:first-of-type> div p{
+    font-size: 0.85rem;
+    max-width: 400px;
+    color: var(--paragraph);
+}
+
+#services .container> .image__container{
+    position: relative;
+    height:30rem;
+}
+#services .container .image__container img{
+    object-fit: cover;
+    border-radius: 50%;
+    position:absolute;
+}
+.circular__img1{
+    width:10rem;
+    height:10rem;
+}
+.circular__img2{
+    width:20rem;
+    height:20rem;
+    left:40%;
+    top:-10%;
+}
+.circular__img3{
+    width:15rem;
+    height:15rem;
+    left:-10%;
+    top:40%;
+}
+.circular__img4{
+    width: 7.5rem;
+    height: 7.5rem;
+    bottom:10%;
+    right:32%;
+}
+
+/* Subsection plans */
+#plans{
+    padding:3rem 0;
+}
+
+#plans>.container{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#plans>.container > div:first-of-type{
+    width: 50%;
+    background-color: #F5C94F;
+    border-radius: 2rem;
+    margin-right: 2rem;
+    position: relative;
+    z-index: 10;
+}
+#plans>.container > div:first-of-type img{
+    transform: translateY(5px);
+}
+#plans>.container > div:last-of-type{
+    width: 40%;
+    text-align: right;
+}
+#plans>.container > div:last-of-type> h2{
+    font-size: 3rem;
+    font-weight: bolder;
+    letter-spacing: -1px;
+    margin-bottom: 2rem;
+    line-height: 1;
+}
+#plans>.container > div:last-of-type >div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#plans>.container > div:last-of-type> div > p{
+    font-size: 0.85rem;
+    color:var(--paragraph);
+    line-height: 1.5;
+}

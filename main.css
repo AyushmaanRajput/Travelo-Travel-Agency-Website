@@ -96,3 +96,111 @@ header nav .cta img {
   margin-left: 0.5rem;
   margin-right: auto;
 }
+
+/* Footer Styles */
+footer{
+  padding:5rem 0 0 0;
+  background-color: var(--background);
+}
+footer .container>div:first-of-type{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+footer .container .socials,
+footer .container .newsletter{
+  width: 50%;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+footer .container .socials{
+  border-right: 1px solid var(--paragraph);
+  padding-right: 2rem;
+}
+footer .container .newsletter{
+  padding-left: 2rem;
+  position: relative;
+}
+footer .container h3{
+  font-size: var(--h3);
+  line-height: 1.2;
+  padding-bottom: 0;
+  max-width:50%;
+}
+footer .container .socials div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+footer .container .socials div>img{
+  background-color: white;
+  padding:.5rem;
+  border-radius: 50%;
+  margin-left: .5rem;
+}
+footer .container .newsletter input{
+  padding:1rem;
+  border-radius: 50px;
+  border:none;
+}
+
+footer .container .newsletter input::placeholder{
+  color:var(--paragraph);
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+footer .container .newsletter img{
+  height:2.5rem;
+  position: absolute;
+  right: 0;
+}
+hr{
+  background-color: var(--paragraph);
+  margin-bottom: 2rem;
+}
+
+footer .container>div:nth-of-type(2){
+  display:grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap:2rem;
+  margin-bottom: 1rem;
+}
+
+footer .container>div:nth-of-type(2) a{
+  text-decoration: none;
+  font-size: 0.85rem;
+  color: var(--paragraph);
+  margin-bottom: .5rem;
+}
+footer p{
+  color:var(--paragraph);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+footer h4{
+  font-size: var(--h4);
+  margin-bottom: 1rem;
+}
+footer .container>div:nth-of-type(2)>div{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+footer .container>div:nth-of-type(2) img{
+  align-self: flex-start;
+}
+footer .container>div:nth-of-type(3),
+footer .container>div:nth-of-type(3)>div{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+footer .container>div:nth-of-type(3)>div {
+  width:40%;
+}
+footer .container>div:nth-of-type(3)>div img{
+  width: 3rem;
+  justify-self: flex-end;
+}
