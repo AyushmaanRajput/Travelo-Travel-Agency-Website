@@ -1,0 +1,56 @@
+#discover{
+    padding:5rem 0;
+}
+
+#discover h2{
+    font-size: var(--h2);
+    font-weight: bolder;
+    letter-spacing: -1px;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+#discover .container>div{
+    width: 100%;
+    height:22rem;
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#discover .card{
+    width:23%;
+    height:20rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    position:relative;
+}
+#discover .card:nth-of-type(2),#discover .card:nth-of-type(4){
+    align-self: flex-end;
+}
+#discover .card .card__background{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+#discover .card .location{
+    position: absolute;
+    top:1rem;
+    right:1rem;
+    z-index: 10;
+
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+    padding:0.5rem;
+    border-radius: 20px;
+}
+#discover .card .location> img{
+    width:0.8rem;
+    object-fit: cover;
+    margin-right: 0.25rem;
+}
+#discover .card .location> p{
+    font-size: 0.85rem;
+}

@@ -3,10 +3,16 @@
   /* Colors */
   --headings: #000000;
   --background: #f9f9f9;
-  --paragraph: #bababa;
+  --paragraph: #696969;
   --highlight-light: #f6f6f6;
   --highlight-dark: #f2f2f2;
   --waves-color: #d58170;
+
+  /* fontsizes */
+  --h1:5.5rem;
+  --h2:4rem;
+  --h3:1.75rem;
+  --h4:1.25rem;
 }
 /* 
 icon1:#EB6A4F;
@@ -28,57 +34,65 @@ icon6:#C367B8;https://theme.zdassets.com/theme_assets/613805/20ca47df8103cd19bba
 body {
   font-family: "DM Sans", sans-serif;
 }
-body > * {
-    width:min(100%, 70rem);
-    margin:1.25rem auto;
+
+img{
+  object-fit: cover;
 }
-header nav{
-    padding:1rem 0;
-    width: 100%;
-    display:flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    border-top: 1px solid var(--paragraph);
+header nav {
+  width: 100%;
+  background-color: var(--background);
+  padding-top:1rem;
 }
-header nav ul{
-    display: flex;
-    margin-left: 15rem;
+.container{
+  width:min(100%,65rem);
+  margin:auto;
 }
-header nav ul li{
-    display: flex;
-    flex-direction: column;
-    margin-left: 2.5rem;
-    width: 125px;
-    position: relative;
+.container>.nav{
+  padding: 1rem 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-top: 1px solid var(--paragraph);
 }
-header nav ul li::before{
-    content:"";
-    width: 1px;
-    height:20px;
-    position: absolute;
-    top:-1rem;
-    left:-1rem;
-    background-color: var(--paragraph);
+header nav ul {
+  display: flex;
+  margin-left: 15rem;
 }
-header nav ul li a{
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    text-decoration: none;
-    color: var(--headings);
+header nav ul li {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2.5rem;
+  width: 125px;
+  position: relative;
 }
-header nav .cta{
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
+header nav ul li::before {
+  content: "";
+  width: 1px;
+  height: 20px;
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  background-color: var(--paragraph);
 }
-header nav .cta .cta__btn{
-    border:none;
-    background-color: transparent;
-    letter-spacing: -.5px;
+header nav ul li a {
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+  color: var(--headings);
 }
-header nav .cta img{
-    width:2rem;
-    object-fit: cover;
-    margin-left: .5rem;
-    margin-right: auto;
+header nav .cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header nav .cta .cta__btn {
+  border: none;
+  background-color: transparent;
+  letter-spacing: -0.5px;
+}
+header nav .cta img {
+  width: 2rem;
+  object-fit: cover;
+  margin-left: 0.5rem;
+  margin-right: auto;
 }
