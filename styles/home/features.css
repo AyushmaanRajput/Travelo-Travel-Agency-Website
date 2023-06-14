@@ -1,9 +1,8 @@
 #features {
-  padding: 3rem 0;
+  padding: 5rem 0;
 }
 
 #features h2 {
-  text-align: center;
   font-size: var(--h2);
   font-weight: bolder;
   letter-spacing: -1px;
