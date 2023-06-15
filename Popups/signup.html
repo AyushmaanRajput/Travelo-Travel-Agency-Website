@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../main.css" />
+    <title>Login/Signup Form</title>
+    <style>
+
+      .tab {
+        overflow: hidden;
+        margin-bottom: 20px;
+      }
+
+      .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 10px 20px;
+        margin-right: 10px;
+        border-radius: 5px 5px 0 0;
+      }
+
+      .tab button.active {
+        background-color: #ccc;
+      }
+
+      .tabcontent {
+        display: none;
+      }
+
+      #signupForm,
+      #loginForm {
+        display: none;
+      }
+
+      #successMessage,
+      #signupSuccessMessage {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border-radius: 5px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="container">
+          <div class="nav">
+            <img src="../images/Travelo Logo.jpg" alt="Travelo Logo" />
+            <ul>
+              <li>
+                <a href="/" class="link">Home</a>
+                <a href="" class="link">About Us</a>
+              </li>
+              <li>
+                <a href="/templates/destinations.html" class="link">Destinations</a>
+                <a href="" class="link">Features</a>
+              </li>
+              <li>
+                <a href="/" class="link">Pricing</a>
+                <a href="" class="link">Reviews</a>
+              </li>
+            </ul>
+            <div class="cta">
+              <button class="cta__btn">CONTACT US</button>
+              <img src="../images/icons/cta-btn.png" alt="cta button icon" />
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="tab">
+        <button
+          id="loginTab"
+          class="tablinks active"
+          onclick="openTab(event, 'loginForm')"
+        >
+          Login
+        </button>
+        <button
+          id="signupTab"
+          class="tablinks"
+          onclick="openTab(event, 'signupForm')"
+        >
+          Signup
+        </button>
+      </div>
+
+      <div id="loginForm" class="tabcontent">
+        <h3>Login</h3>
+        <form onsubmit="login(event)">
+          <input
+            type="email"
+            id="loginEmail"
+            placeholder="Email"
+            required
+          /><br />
+          <input
+            type="password"
+            id="loginPassword"
+            placeholder="Password"
+            required
+          /><br />
+          <button type="submit">Login</button>
+        </form>
+      </div>
+
+      <div id="signupForm" class="tabcontent">
+        <h3>Signup</h3>
+        <form onsubmit="signup(event)">
+          <input
+            type="text"
+            id="signupName"
+            placeholder="Name"
+            required
+          /><br />
+          <input
+            type="email"
+            id="signupEmail"
+            placeholder="Email"
+            required
+          /><br />
+          <input
+            type="password"
+            id="signupPassword"
+            placeholder="Password"
+            required
+          /><br />
+          <input
+            type="password"
+            id="signupConfirmPassword"
+            placeholder="Confirm Password"
+            required
+          /><br />
+          <button type="submit">Signup</button>
+        </form>
+      </div>
+    </div>
+    <div id="successMessage">Success! You have logged in.</div>
+    <div id="signupSuccessMessage">Success! Your account has been created.</div>
+
+    <footer>
+      <div class="container">
+        <div>
+          <div class="socials">
+            <h3>Leading the way in adventure</h3>
+            <div>
+              <img src="../images/icons/facebook.svg" alt="Facebook Icon" />
+              <img src="../images/icons/instagram.svg" alt="Instagram Icon" />
+              <img src="../images/icons/twitter.svg" alt="Twitter Icon" />
+              <img src="../images/icons/youtube.svg" alt="Youtube Icon" />
+            </div>
+          </div>
+          <div class="newsletter">
+            <h3>Join Our Newsletter</h3>
+            <input type="email" placeholder="Enter your e-mail" />
+            <img src="../images/icons/cta-btn.png" alt="Submit Icon" />
+          </div>
+        </div>
+        <hr />
+        <div>
+          <div>
+            <img src="../images/Travelo Logo.jpg" alt="Travelo Logo" />
+            <p>
+              Travell plans are not really an instrument themselves but a
+              delivery mechanism or strategy for mostly others
+            </p>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <a href="/">+913134566585</a>
+            <a href="">info@travelo.com</a>
+            <a href="">support@travelo.com</a>
+          </div>
+          <div>
+            <h4>Company</h4>
+            <a href="/">About Us</a>
+            <a href="">Features</a>
+            <a href="">Careers</a>
+          </div>
+          <div>
+            <h4>Resource</h4>
+            <a href="/">Press Info</a>
+            <a href="">Customers</a>
+            <a href="">Reviews</a>
+          </div>
+        </div>
+        <hr />
+        <div>
+          <p>@2023 travelo | All Rights Reserved</p>
+          <div>
+            <p>We Accept Payment:</p>
+            <img src="../images/icons/logos_stripe.svg" alt="Stripe Logo" />
+            <img src="../images/icons/Paypal.svg" alt="Paypal Logo" />
+            <img src="../images/icons/Payonner 1.svg" alt="Payoneer Logo" />
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Check if the email already exists in local storage
+      function isEmailExists(email) {
+        const users = JSON.parse(localStorage.getItem("users"));
+        if (users) {
+          return users.some((user) => user.email === email);
+        }
+        return false;
+      }
+
+      // Save user data to local storage
+      function saveUserData(name, email, password) {
+        const users = JSON.parse(localStorage.getItem("users")) || [];
+        users.push({ name, email, password });
+        localStorage.setItem("users", JSON.stringify(users));
+      }
+
+      // Login event handler
+      function login(event) {
+        event.preventDefault();
+        const email = document.getElementById("loginEmail").value;
+        const password = document.getElementById("loginPassword").value;
+
+        const users = JSON.parse(localStorage.getItem("users"));
+        if (users) {
+          const user = users.find(
+            (user) => user.email === email && user.password === password
+          );
+          if (user) {
+            showLoginSuccessMessage();
+            resetLoginForm();
+          } else {
+            alert("Invalid email or password.");
+          }
+        } else {
+          alert("Invalid email or password.");
+        }
+      }
+
+      // Signup event handler
+      function signup(event) {
+        event.preventDefault();
+        const name = document.getElementById("signupName").value;
+        const email = document.getElementById("signupEmail").value;
+        const password = document.getElementById("signupPassword").value;
+        const confirmPassword = document.getElementById(
+          "signupConfirmPassword"
+        ).value;
+
+        if (password.length < 8) {
+          alert("Password must be at least 8 characters long.");
+          return;
+        }
+
+        if (password !== confirmPassword) {
+          alert("Passwords do not match.");
+          return;
+        }
+
+        if (isEmailExists(email)) {
+          alert("Email already exists. Please login instead.");
+          return;
+        }
+
+        saveUserData(name, email, password);
+        showSignupSuccessMessage();
+        resetSignupForm();
+      }
+
+      // Show success message popup for login
+      function showLoginSuccessMessage() {
+        const successMessage = document.getElementById("successMessage");
+        successMessage.style.display = "block";
+        setTimeout(() => {
+          successMessage.style.display = "none";
+        }, 2000);
+      }
+
+      // Show success message popup for signup
+      function showSignupSuccessMessage() {
+        const signupSuccessMessage = document.getElementById(
+          "signupSuccessMessage"
+        );
+        signupSuccessMessage.style.display = "block";
+        setTimeout(() => {
+          signupSuccessMessage.style.display = "none";
+        }, 2000);
+      }
+
+      // Reset login form
+      function resetLoginForm() {
+        document.getElementById("loginEmail").value = "";
+        document.getElementById("loginPassword").value = "";
+      }
+
+      // Reset signup form
+      function resetSignupForm() {
+        document.getElementById("signupName").value = "";
+        document.getElementById("signupEmail").value = "";
+        document.getElementById("signupPassword").value = "";
+        document.getElementById("signupConfirmPassword").value = "";
+      }
+
+      // Switch between login and signup tabs
+      function openTab(event, tabName) {
+        const tablinks = document.getElementsByClassName("tablinks");
+        for (let i = 0; i < tablinks.length; i++) {
+          tablinks[i].classList.remove("active");
+        }
+        event.currentTarget.classList.add("active");
+
+        const tabcontent = document.getElementsByClassName("tabcontent");
+        for (let i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        document.getElementById(tabName).style.display = "block";
+      }
+
+      // Set the default active tab
+      document.getElementById("loginTab").click();
+    </script>
+  </body>
+</html>

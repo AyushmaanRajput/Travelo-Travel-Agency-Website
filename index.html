@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="./main.css" />
     <link rel="stylesheet" href="./styles/home/hero.css" />
     <link rel="stylesheet" href="./styles/home/discover.css" />
-    <link rel="stylesheet" href="./styles/home/features.css">
-    <link rel="stylesheet" href="./styles/home/services.css">
-    <link rel="stylesheet" href="./styles/home/travel.css">
+    <link rel="stylesheet" href="./styles/home/features.css" />
+    <link rel="stylesheet" href="./styles/home/services.css" />
+    <link rel="stylesheet" href="./styles/home/travel.css" />
     <title>Travelo</title>
   </head>
   <body>
@@ -20,11 +20,11 @@
             <ul>
               <li>
                 <a href="/" class="link">Home</a>
-                <a href="" class="link">About Us</a>
+                <a href="/templates/about.html" class="link">About Us</a>
               </li>
               <li>
-                <a href="/" class="link">Destinations</a>
-                <a href="" class="link">Features</a>
+                <a href="/templates/destinations.html" class="link">Destinations</a>
+                <a href="/templates/services.html" class="link">Features</a>
               </li>
               <li>
                 <a href="/" class="link">Pricing</a>
@@ -44,9 +44,9 @@
         <div class="container">
           <h1>Lifelong Memories Just A Few Days Away</h1>
           <div>
-            <button>Join With Us</button>
+            <button id="join">Join With Us</button>
             <div>
-              <a href="/">Learn More</a>
+              <a href="/templates/about.html">Learn More</a>
               <img src="./images/icons/chevron-right.svg" alt="right icon" />
             </div>
           </div>
@@ -100,28 +100,40 @@
           <h2>Discover the touch of Nature</h2>
           <div>
             <div class="card">
-              <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1121&q=80" class="card__background">
+              <img
+                src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1121&q=80"
+                class="card__background"
+              />
               <div class="location">
                 <img src="./images/icons/map-pin.png" alt="Location Icon" />
                 <p>Tanzania</p>
               </div>
             </div>
             <div class="card">
-              <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" class="card__background">
+              <img
+                src="https://images.unsplash.com/photo-1533105079780-92b9be482077?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                class="card__background"
+              />
               <div class="location">
                 <img src="./images/icons/map-pin.png" alt="Location Icon" />
                 <p>Colombia</p>
               </div>
             </div>
             <div class="card">
-              <img src="https://images.unsplash.com/photo-1522509585149-c9cd39d1ff08?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1497&q=80" class="card__background">
+              <img
+                src="https://images.unsplash.com/photo-1522509585149-c9cd39d1ff08?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1497&q=80"
+                class="card__background"
+              />
               <div class="location">
                 <img src="./images/icons/map-pin.png" alt="Location Icon" />
                 <p>Bahrain</p>
               </div>
-            </div>        
+            </div>
             <div class="card">
-              <img src="https://images.unsplash.com/photo-1518030246977-4accad8a030b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" class="card__background">
+              <img
+                src="https://images.unsplash.com/photo-1518030246977-4accad8a030b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                class="card__background"
+              />
               <div class="location">
                 <img src="./images/icons/map-pin.png" alt="Location Icon" />
                 <p>Mauritius</p>
@@ -135,40 +147,58 @@
           <h2>Our Features</h2>
           <div>
             <div>
-              <img src="./images/icons/Stack Icon.png">
+              <img src="./images/icons/Stack Icon.png" />
 
               <h3>Dynamic Packaging</h3>
-              <p>Dynamic packaging is a method used to package holiday bookings to enable consumers to bulid their package</p>
+              <p>
+                Dynamic packaging is a method used to package holiday bookings
+                to enable consumers to bulid their package
+              </p>
             </div>
             <div>
-              <img src="./images/icons/cross.png">
+              <img src="./images/icons/cross.png" />
 
               <h3>Instant Itinerary</h3>
-              <p>Get a verifiable Flight and Hotel itinerary in less than 5 minutes for your next Visa travel application to the place</p>
+              <p>
+                Get a verifiable Flight and Hotel itinerary in less than 5
+                minutes for your next Visa travel application to the place
+              </p>
             </div>
             <div>
-              <img src="./images/icons/Stack Icon.png">
+              <img src="./images/icons/Stack Icon.png" />
 
               <h3>Vendor Extant</h3>
-              <p>An integrated decision model for cloud vendor selection using ... of the model are analysed by using sensitivity analysis</p>
+              <p>
+                An integrated decision model for cloud vendor selection using
+                ... of the model are analysed by using sensitivity analysis
+              </p>
             </div>
             <div>
-              <img src="./images/icons/box.png">
+              <img src="./images/icons/box.png" />
 
               <h3>Mutlitple Verticals</h3>
-              <p>A Vertical, also known as a sales vertical or vertical market, is the industry that a company's offerings are specifically</p>
+              <p>
+                A Vertical, also known as a sales vertical or vertical market,
+                is the industry that a company's offerings are specifically
+              </p>
             </div>
             <div>
-              <img src="./images/icons/video.png">
+              <img src="./images/icons/video.png" />
 
               <h3>Blogging Platform</h3>
-              <p>We recommend using a platform, such as Wix or Squarespace. Nethier requires any coding knowledge and each provides</p>
+              <p>
+                We recommend using a platform, such as Wix or Squarespace.
+                Nethier requires any coding knowledge and each provides
+              </p>
             </div>
             <div>
-              <img src="./images/icons/Infinity.png">
+              <img src="./images/icons/Infinity.png" />
 
               <h3>Language Locales</h3>
-              <p>A locale defines a user language and contains language and country related parameters. Many languages</p>
+              <p>
+                A locale defines a user language and contains language and
+                country related parameters. Many languages
+              </p>
             </div>
           </div>
         </div>
@@ -180,36 +210,69 @@
             <div>
               <div>
                 <h3><span>01.</span> Travel Plan</h3>
-                <p>Travel plans are not really an instrument themselves but a delivery mechanism or strategy for mostly others</p>
+                <p>
+                  Travel plans are not really an instrument themselves but a
+                  delivery mechanism or strategy for mostly others
+                </p>
               </div>
               <div>
                 <h3><span>02.</span> Flight Booking</h3>
-                <p>Discover your next dream destination. Find deals on domestic and international flights</p>
+                <p>
+                  Discover your next dream destination. Find deals on domestic
+                  and international flights
+                </p>
               </div>
               <div>
                 <h3><span>03.</span> Accomodation</h3>
-                <p>Lodging, food and services or travelling space and related services.</p>
+                <p>
+                  Lodging, food and services or travelling space and related
+                  services.
+                </p>
               </div>
             </div>
           </div>
           <div class="image__container">
-            <img src="https://images.unsplash.com/photo-1553697388-94e804e2f0f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=765&q=80" alt="Passport Image" class="circular__img1">
-            <img src="https://i.pinimg.com/736x/c3/d3/3c/c3d33c9944f7bdbe8b83d932afe1a58a.jpg" alt="Surf Van Image" class="circular__img2">
-            <img src="https://images.unsplash.com/photo-1579991155656-4647abc8d4b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Airplane Image" class="circular__img3">
-            <img src="https://images.unsplash.com/photo-1526918761918-da528d9558c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1076&q=80" alt="Surfboard Image" class="circular__img4">
+            <img
+              src="https://images.unsplash.com/photo-1553697388-94e804e2f0f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=765&q=80"
+              alt="Passport Image"
+              class="circular__img1"
+            />
+            <img
+              src="https://i.pinimg.com/736x/c3/d3/3c/c3d33c9944f7bdbe8b83d932afe1a58a.jpg"
+              alt="Surf Van Image"
+              class="circular__img2"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1579991155656-4647abc8d4b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+              alt="Airplane Image"
+              class="circular__img3"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1526918761918-da528d9558c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1076&q=80"
+              alt="Surfboard Image"
+              class="circular__img4"
+            />
           </div>
         </div>
       </section>
       <section id="plans">
         <div class="container">
           <div>
-            <img src="./images/Tourist.png" alt="Traveller with flight ticket">
+            <img
+              src="./images/Tourist.png"
+              alt="Traveller with flight ticket"
+            />
           </div>
           <div>
             <h2>Plan easy, Play Less & experience more</h2>
             <div>
-              <img src="./images/Circular Text.png" alt="Circuler text">
-              <p>Traveling is important in life because it will open you up to a new way of living and being. You will experience new connections with people and places and immerse in different cultures, which can help widen you perspective.</p>
+              <img src="./images/Circular Text.png" alt="Circuler text" />
+              <p>
+                Traveling is important in life because it will open you up to a
+                new way of living and being. You will experience new connections
+                with people and places and immerse in different cultures, which
+                can help widen you perspective.
+              </p>
             </div>
           </div>
         </div>
@@ -219,19 +282,39 @@
           <h2>Revolutionsing the ways we travel</h2>
           <div>
             <div>
-              <img src="https://images.unsplash.com/reserve/L55hYy77SLqb6zeTMlWr_IMG_9035.jpg?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Hot Air Balloon Images">
+              <img
+                src="https://images.unsplash.com/reserve/L55hYy77SLqb6zeTMlWr_IMG_9035.jpg?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="Hot Air Balloon Images"
+              />
               <h3>Custom Booking</h3>
-              <p>Custom booking window feature allows you to restrict the available dates for booking for particular duration</p>
+              <p>
+                Custom booking window feature allows you to restrict the
+                available dates for booking for particular duration
+              </p>
             </div>
             <div>
-              <img src="https://images.unsplash.com/reserve/L55hYy77SLqb6zeTMlWr_IMG_9035.jpg?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Hot Air Balloon Images">
-              <h3>Custom Booking</h3>
-              <p>Custom booking window feature allows you to restrict the available dates for booking for particular duration</p>
+              <img
+                src="https://d3iso9mq9tb10q.cloudfront.net/wysiwyg/Article-Images-2020/Miami/BBT-Kids-Article-IMG-1-Beach.jpg"
+                alt="Life Guard House Image"
+              />
+              <h3>End-to-End Messaging</h3>
+              <p>
+                If you're looking for a messaging app that offers secure
+                end-to-end encryption, here's a roundup of the best apps you can
+                use.
+              </p>
             </div>
             <div>
-              <img src="https://images.unsplash.com/reserve/L55hYy77SLqb6zeTMlWr_IMG_9035.jpg?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Hot Air Balloon Images">
-              <h3>Custom Booking</h3>
-              <p>Custom booking window feature allows you to restrict the available dates for booking for particular duration</p>
+              <img
+                src="https://images.unsplash.com/photo-1488462237308-ecaa28b729d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=657&q=80"
+                style="object-position: bottom"
+                alt="Umbrellas Images"
+              />
+              <h3>Instant Itinerary</h3>
+              <p>
+                Get a verifiable Flight and Hotel itineraryj in less than 5
+                minutes for your next Visa travel application to the place
+              </p>
             </div>
           </div>
         </div>
@@ -243,23 +326,27 @@
           <div class="socials">
             <h3>Leading the way in adventure</h3>
             <div>
-              <img src="./images/icons/facebook.svg"  alt="Facebook Icon">
-              <img src="./images/icons/instagram.svg" alt="Instagram Icon">
-              <img src="./images/icons/twitter.svg" alt="Twitter Icon">
-              <img src="./images/icons/youtube.svg" alt="Youtube Icon">
+              <img src="./images/icons/facebook.svg" alt="Facebook Icon" />
+              <img src="./images/icons/instagram.svg" alt="Instagram Icon" />
+              <img src="./images/icons/twitter.svg" alt="Twitter Icon" />
+              <img src="./images/icons/youtube.svg" alt="Youtube Icon" />
             </div>
           </div>
           <div class="newsletter">
             <h3>Join Our Newsletter</h3>
-            <input type="email" placeholder="Enter your e-mail">
-            <img src="./images/icons/cta-btn.png" alt="Submit Icon">
+            <input type="email" placeholder="Enter your e-mail" />
+            <img src="./images/icons/cta-btn.png" alt="Submit Icon" onclick="showPopup()"/>
+            <div id="popup" class="popup"></div>
           </div>
         </div>
-        <hr>
-        <div >
+        <hr />
+        <div>
           <div>
-            <img src="./images/Travelo Logo.jpg" alt="Travelo Logo">
-            <p>Travell plans are not really an instrument themselves but a delivery mechanism or strategy for mostly others</p>
+            <img src="./images/Travelo Logo.jpg" alt="Travelo Logo" />
+            <p>
+              Travell plans are not really an instrument themselves but a
+              delivery mechanism or strategy for mostly others
+            </p>
           </div>
           <div>
             <h4>Contact</h4>
@@ -280,18 +367,19 @@
             <a href="">Reviews</a>
           </div>
         </div>
-        <hr>
-      <div>
-        <p>@2023 travelo | All Rights Reserved</p>
+        <hr />
         <div>
-          <p>We Accept Payment:</p>
-          <img src="./images/icons/logos_stripe.svg" alt="Stripe Logo">
-          <img src="./images/icons/logos_paypal.svg" alt="Paypal Logo">
-          <img src="./images/icons/Payonner 1.svg" alt="Payoneer Logo">
+          <p>@2023 travelo | All Rights Reserved</p>
+          <div>
+            <p>We Accept Payment:</p>
+            <img src="./images/icons/logos_stripe.svg" alt="Stripe Logo" />
+            <img src="./images/icons/Paypal.svg" alt="Paypal Logo" />
+            <img src="./images/icons/Payonner 1.svg" alt="Payoneer Logo" />
+          </div>
         </div>
       </div>
-      </div>
-      
     </footer>
   </body>
+  <script src="./main.js
+  "></script>
 </html>

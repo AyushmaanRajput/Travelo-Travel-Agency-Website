@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../main.css" />
+    <title>Reviews | Your Travel Agency</title>
+    <style>
+      /* CSS styles */
+
+      .button-group {
+        margin-bottom: 20px;
+      }
+
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #ccc;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-right: 10px;
+      }
+
+      .button.active {
+        background-color: #555;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+      }
+
+      .review-card {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .review-card img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+      }
+    </style>
+    
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="container">
+          <div class="nav">
+            <img src="../images/Travelo Logo.jpg" alt="Travelo Logo" />
+            <ul>
+              <li>
+                <a href="../index.html" class="link">Home</a>
+                <a href="./about.html" class="link">About Us</a>
+              </li>
+              <li>
+                <a href="destinations.html" class="link">Destinations</a>
+                <a href="./services.html" class="link">Features</a>
+              </li>
+              <li>
+                <a href="prices.html" class="link">Pricing</a>
+                <a href="#" class="link">Reviews</a>
+              </li>
+            </ul>
+            <div class="cta">
+              <button class="cta__btn">CONTACT US</button>
+              <img src="../images/icons/cta-btn.png" alt="cta button icon" />
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="container">
+        <h1>Reviews</h1>
+
+        <div class="button-group">
+          <button class="button active" data-columns="3">3 Columns</button>
+          <button class="button" data-columns="4">4 Columns</button>
+        </div>
+
+        <div class="grid">
+          <div class="review-card">
+            <img src="placeholder.jpg" alt="Review" />
+            <h3>John Doe</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+              aliquet velit vitae erat rutrum condimentum.
+            </p>
+          </div>
+          <div class="review-card">
+            <img src="placeholder.jpg" alt="Review" />
+            <h3>Jane Smith</h3>
+            <p>
+              Ut efficitur nibh in pharetra congue. Nulla facilisi. Integer
+              tempor dignissim ex, id pellentesque elit iaculis nec.
+            </p>
+          </div>
+          <div class="review-card">
+            <img src="placeholder.jpg" alt="Review" />
+            <h3>Mark Johnson</h3>
+            <p>
+              Suspendisse blandit ultrices nisi vitae aliquet. Integer lobortis
+              sem in augue ullamcorper, vitae aliquam lectus hendrerit.
+            </p>
+          </div>
+          <!-- Add more review cards as needed -->
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <div>
+          <div class="socials">
+            <h3>Leading the way in adventure</h3>
+            <div>
+              <img src="../images/icons/facebook.svg" alt="Facebook Icon" />
+              <img src="../images/icons/instagram.svg" alt="Instagram Icon" />
+              <img src="../images/icons/twitter.svg" alt="Twitter Icon" />
+              <img src="../images/icons/youtube.svg" alt="Youtube Icon" />
+            </div>
+          </div>
+          <div class="newsletter">
+            <h3>Join Our Newsletter</h3>
+            <input type="email" placeholder="Enter your e-mail" />
+            <img src="../images/icons/cta-btn.png" alt="Submit Icon" onclick="showPopup()"/>
+            <div id="popup" class="popup"></div>
+
+          </div>
+        </div>
+        <hr />
+        <div>
+          <div>
+            <img src="../images/Travelo Logo.jpg" alt="Travelo Logo" />
+            <p>
+              Travell plans are not really an instrument themselves but a
+              delivery mechanism or strategy for mostly others
+            </p>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <a href="/">+913134566585</a>
+            <a href="">info@travelo.com</a>
+            <a href="">support@travelo.com</a>
+          </div>
+          <div>
+            <h4>Company</h4>
+            <a href="/">About Us</a>
+            <a href="">Features</a>
+            <a href="">Careers</a>
+          </div>
+          <div>
+            <h4>Resource</h4>
+            <a href="/">Press Info</a>
+            <a href="">Customers</a>
+            <a href="">Reviews</a>
+          </div>
+        </div>
+        <hr />
+        <div>
+          <p>@2023 travelo | All Rights Reserved</p>
+          <div>
+            <p>We Accept Payment:</p>
+            <img src="../images/icons/logos_stripe.svg" alt="Stripe Logo" />
+            <img src="../images/icons/Paypal.svg" alt="Paypal Logo" />
+            <img src="../images/icons/Payonner 1.svg" alt="Payoneer Logo" />
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="../main.js"></script>
+  <script>
+    // JavaScript code
+    document.addEventListener("DOMContentLoaded", function () {
+      const buttons = document.querySelectorAll(".button");
+      const grid = document.querySelector(".grid");
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", function () {
+          buttons.forEach((btn) => btn.classList.remove("active"));
+          this.classList.add("active");
+          const columns = this.getAttribute("data-columns");
+          grid.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
+        });
+      });
+    });
+  </script>
+</html>
