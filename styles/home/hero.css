@@ -19,7 +19,9 @@ h1 + div {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 4rem;
+  margin-bottom: 6rem;
+  position:relative;
+  z-index: 100;
 }
 h1 + div > button {
   background-color: var(--headings);
@@ -56,9 +58,9 @@ h1 + div > div > img {
   position: relative;
 }
 .hero__content > img {
-    position: absolute;
-    top:-37%;
-    left:-18%;
+  position: absolute;
+  top: -37%;
+  left: -18%;
   width: 40rem;
   object-fit: contain;
 }
@@ -67,14 +69,14 @@ h1 + div > div > img {
   margin-right: 5rem;
   position: relative;
 }
-.hero__content>p::after{
-    content:"";
-    position: absolute;
-    bottom:24%;
-    right:-60%;
-    width: 90px;
-    height: 1px;
-    background:var(--paragraph);
+.hero__content > p::after {
+  content: "";
+  position: absolute;
+  bottom: 24%;
+  right: -60%;
+  width: 90px;
+  height: 1px;
+  background: var(--paragraph);
 }
 .hero__content > div {
   display: flex;
