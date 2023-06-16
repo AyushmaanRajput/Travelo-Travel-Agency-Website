@@ -9,7 +9,13 @@
     <link rel="stylesheet" href="./styles/home/features.css" />
     <link rel="stylesheet" href="./styles/home/services.css" />
     <link rel="stylesheet" href="./styles/home/travel.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Travelo</title>
   </head>
   <body>
@@ -30,8 +36,8 @@
                 <a href="/templates/services.html" class="link">Features</a>
               </li>
               <li>
-                <a href="/" class="link">Pricing</a>
-                <a href="" class="link">Reviews</a>
+                <a href="./templates/prices.html" class="link">Pricing</a>
+                <a href="./templates/reviews.html" class="link">Reviews</a>
               </li>
             </ul>
             <div class="cta">
@@ -47,7 +53,7 @@
         <div class="container">
           <h1>Lifelong Memories Just A Few Days Away</h1>
           <div>
-            <button id="join">Join With Us</button>
+            <button id="join" class="primary-btn">Join With Us</button>
             <div>
               <a href="/templates/about.html">Learn More</a>
               <img src="./images/icons/chevron-right.svg" alt="right icon" />
@@ -323,6 +329,11 @@
         </div>
       </section>
     </main>
+    <div class="wishlist" id="wishlist">
+      <i class="fa-solid fa-cart-shopping"></i>
+    </div>
+    <div class="wishlist-content" id="wishlist-content">
+    </div>
     <footer>
       <div class="container">
         <div>
@@ -395,5 +406,6 @@
     joinUsBtn.addEventListener("click", function () {
       window.location.href = "Popups/signup.html";
     });
+
   </script>
 </html>

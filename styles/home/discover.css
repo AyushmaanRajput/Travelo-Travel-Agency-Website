@@ -33,8 +33,7 @@
     position: absolute;
     top:1rem;
     right:1rem;
-    z-index: 10;
-
+    z-index: 3;
     display:flex;
     align-items: center;
     justify-content: space-around;

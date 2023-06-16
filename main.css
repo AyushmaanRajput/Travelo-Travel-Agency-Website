@@ -43,29 +43,54 @@ button {
 img {
   object-fit: cover;
 }
-h1{
+a{
+  text-decoration: none;
+}
+h1 {
   font-size: var(--h1);
   font-weight: bolder;
   letter-spacing: -2px;
   margin: 3rem auto;
   line-height: 1.1;
 }
-h2{
+h2 {
   font-size: var(--h2);
   font-weight: bolder;
   letter-spacing: -1px;
   margin-bottom: 3rem;
   line-height: 1;
 }
-h3{
+h3 {
   font-size: var(--h3);
   margin-bottom: 1rem;
   color: var(--headings);
 }
-p{
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+p {
   font-size: 0.9rem;
   color: var(--paragraph);
   line-height: 1.5;
+}
+.primary-btn {
+  background-color: var(--headings);
+  color: #fff;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 50px;
+  padding: 1rem 2rem;
+  margin-right: 1rem;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+}
+.primary-btn:hover {
+  background-color: #f5c94f;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+  color: #000;
 }
 header nav {
   width: 100%;
@@ -251,7 +276,55 @@ footer .container > div:nth-of-type(3) > div img {
 }
 
 @keyframes fadeOut {
-  0% { opacity: 1; }
-  50%{ opacity:1;}
-  100% { opacity: 0; }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* Wishlist/cart button */
+.wishlist {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 1rem;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--paragraph);
+  background-color: #fff;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.wishlist:hover {
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+  background-color: #f5c94f;
+  color: #000;
+}
+
+.wishlist-content{
+  display: none;
+  width:300px;
+  height:400px;
+  position: fixed;
+  bottom:2rem;
+  right:7rem;
+  padding:1rem;
+  border-radius: 1rem;
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  z-index: 1000;
+}
+.show{
+  display:block;
 }
