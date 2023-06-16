@@ -4,50 +4,71 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Reviews | Your Travel Agency</title>
     <style>
       /* CSS styles */
-
+      main .container {
+        padding-bottom: 5rem;
+      }
+      main h1 {
+        margin-bottom: 1rem;
+      }
+      main>.container>p {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+      }
       .button-group {
         margin-bottom: 20px;
       }
 
       .button {
         display: inline-block;
-        padding: 10px 20px;
-        background-color: #ccc;
+        padding: .75rem 1.5rem;
+        background-color: #000;
         color: #fff;
         border: none;
-        border-radius: 4px;
+        border-radius: 0.5rem;
         cursor: pointer;
         margin-right: 10px;
+        transition: all 0.2s ease-out;
       }
 
       .button.active {
-        background-color: #555;
+        background-color: #f5c94f;
+        color: black;
+      }
+      .button:hover {
+        background-color: #f5c94fc5;
       }
 
       .grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-gap: 20px;
+        grid-gap: 1rem;
       }
 
       .review-card {
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        padding: 20px;
+        border-radius: 1rem;
+        padding: 1rem;
         text-align: center;
+        box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
       }
 
       .review-card img {
-        width: 100px;
-        height: 100px;
+        width: 150px;
+        height: 150px;
         border-radius: 50%;
-        margin-bottom: 10px;
+        margin-bottom: 1rem;
+        object-position: top;
       }
     </style>
-    
   </head>
   <body>
     <header>
@@ -88,33 +109,53 @@
 
         <div class="grid">
           <div class="review-card">
-            <img src="placeholder.jpg" alt="Review" />
-            <h3>John Doe</h3>
+            <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60" alt="Review" />
+            <h3>Jasmine Doe</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
               aliquet velit vitae erat rutrum condimentum.
             </p>
           </div>
           <div class="review-card">
-            <img src="placeholder.jpg" alt="Review" />
-            <h3>Jane Smith</h3>
+            <img src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Review" />
+            <h3>John Smith</h3>
             <p>
               Ut efficitur nibh in pharetra congue. Nulla facilisi. Integer
               tempor dignissim ex, id pellentesque elit iaculis nec.
             </p>
           </div>
           <div class="review-card">
-            <img src="placeholder.jpg" alt="Review" />
+            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Review" />
             <h3>Mark Johnson</h3>
             <p>
               Suspendisse blandit ultrices nisi vitae aliquet. Integer lobortis
               sem in augue ullamcorper, vitae aliquam lectus hendrerit.
             </p>
           </div>
+          <div class="review-card">
+            <img src="https://images.unsplash.com/photo-1685639837214-bedaccf96afc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyOHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60" alt="Review" />
+            <h3>Sarah Thompson</h3>
+            <p>
+              Ut feugiat nisl sit amet felis malesuada, eget suscipit velit luctus. Sed consequat tellus id consequat imperdiet.
+            </p>
+          </div>
+          <div class="review-card">
+            <img src="https://images.unsplash.com/photo-1602233158242-3ba0ac4d2167?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z2lybHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60" alt="Review" />
+            <h3>Emily Davis</h3>
+            <p>
+              Aliquam et odio sed est ullamcorper varius. Suspendisse sit amet ipsum malesuada, tincidunt odio et, ultricies ligula.
+            </p>
+          </div>
+          
           <!-- Add more review cards as needed -->
         </div>
       </div>
     </main>
+    <div class="wishlist" id="wishlist">
+      <i class="fa-solid fa-cart-shopping"></i>
+    </div>
+    <div class="wishlist-content" id="wishlist-content">
+    </div>
     <footer>
       <div class="container">
         <div>
@@ -130,9 +171,12 @@
           <div class="newsletter">
             <h3>Join Our Newsletter</h3>
             <input type="email" placeholder="Enter your e-mail" />
-            <img src="../images/icons/cta-btn.png" alt="Submit Icon" onclick="showPopup()"/>
+            <img
+              src="../images/icons/cta-btn.png"
+              alt="Submit Icon"
+              onclick="showPopup()"
+            />
             <div id="popup" class="popup"></div>
-
           </div>
         </div>
         <hr />

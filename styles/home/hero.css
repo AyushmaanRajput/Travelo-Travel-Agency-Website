@@ -19,15 +19,7 @@ h1 + div {
   position:relative;
   z-index: 100;
 }
-h1 + div > button {
-  background-color: var(--headings);
-  color: #fff;
-  text-transform: uppercase;
-  border: none;
-  border-radius: 50px;
-  padding: 1rem 2rem;
-  margin-right: 1rem;
-}
+
 h1 + div > div {
   display: flex;
   align-items: center;

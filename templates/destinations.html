@@ -4,8 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Destinations</title>
     <style>
+      main .container {
+        padding-bottom: 3rem;
+      }
+      main h2 {
+        margin-bottom: 1rem;
+        text-align: left;
+      }
+      p {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+        text-align: left;
+      }
       #grid__destinations {
         padding: 2rem;
         text-align: center;
@@ -46,37 +65,73 @@
       .img-5 {
         grid-area: img5;
       }
-      .recommended{
-        display:flex;
+      .city-content {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        margin: 2rem 0;
+      }
+      .recommended {
+        display: flex;
         align-items: flex-start;
         justify-content: space-between;
       }
-      .recommended div{
-        width:32%;
+      .recommended div {
+        width: 32%;
         max-height: 15rem;
         min-height: 10rem;
         border-radius: 1rem;
         overflow: hidden;
         position: relative;
         z-index: 2;
+        cursor: pointer;
       }
-      .recommended img{
+      .recommended div:hover h3 {
+        opacity: 1;
+      }
+      .recommended img {
         width: 100%;
-        height:100%;
+        height: 100%;
 
         object-fit: cover;
-        object-position:center;
+        object-position: center;
       }
-      .recommended h3{
-        position:absolute;
-        top:50%;
-        left:50%;
-        transform: translate(-50%,-50%);
-        padding:12.5rem;
+      .recommended h3 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 12.5rem;
         background-color: #0007;
-        color:white;
+        opacity: 0;
+        color: white;
         z-index: 10;
         text-align: center;
+        transition: opacity 1s ease-in-out;
+        cursor: pointer;
+      }
+
+      /* form css */
+      #search {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      #search label {
+        font-size: var(--h3);
+        margin-right: 1rem;
+      }
+      #search #place {
+        padding: 0.75rem 1.5rem;
+        width: 25%;
+        border-radius: 1rem;
+        border: none;
+        border: 1px solid black;
+        margin-right: 1rem;
+        font-size: 1.25rem;
+      }
+      #search #place:focus,#search #place:active {
+        border-color:#f5c94f;
       }
     </style>
   </head>
@@ -113,14 +168,19 @@
         <div class="container">
           <h1>Find Your Next Vacation Spot</h1>
           <form id="search">
-            <label for="place">Enter some place you want to visit</label>
+            <label for="place">Enter any famous city you want to visit:</label>
             <input type="text" id="place" required />
-            <input type="submit" value="Search" />
+            <input type="submit" value="Search" class="primary-btn" />
           </form>
         </div>
         <div id="grid__destinations"></div>
       </section>
     </main>
+    <div class="wishlist" id="wishlist">
+      <i class="fa-solid fa-cart-shopping"></i>
+    </div>
+    <div class="wishlist-content" id="wishlist-content">
+    </div>
     <footer>
       <div class="container">
         <div>
