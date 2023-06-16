@@ -1,60 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../main.css" />
     <title>Destinations</title>
     <style>
-        #grid__destinations{
-            display:grid;
+      #grid__destinations {
+        /* display:grid;
             grid-template-columns: 1fr 1fr 1fr;
             grid-auto-rows: 250px;
-            gap:2rem;
-            padding:2rem;
-        }
-        #grid__destinations img{
-            border-radius: 1rem;
-            width: 100%;
-            height: 100%;
-            overflow: hidden !important;
-        }
+            gap:2rem; */
+        padding: 2rem;
+        text-align: center;
+      }
+      .collage {
+        width: 100%;
+        padding: 1rem 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-auto-rows: 250px;
+        grid-template-areas:
+          "img1 img1 img3 img3 img3"
+          "img1 img1 img3 img3 img3"
+          "img1 img1 img2 img2 img2"
+          "img5 img5 img2 img2 img2"
+          "img5 img5 img4 img4 img4"
+          "img5 img5 img4 img4 img4";
+
+        gap: 1rem;
+      }
+      .collage img {
+        border-radius: 1rem;
+        width: 100%;
+        height: 100%;
+      }
+      .img-1 {
+        grid-area: img1;
+      }
+      .img-2 {
+        grid-area: img2;
+      }
+      .img-3 {
+        grid-area: img3;
+      }
+      .img-4 {
+        grid-area: img4;
+      }
+      .img-5 {
+        grid-area: img5;
+      }
+      .recommended{
+        display:flex;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+      .recommended div{
+        width:32%;
+        max-height: 15rem;
+        min-height: 10rem;
+        border-radius: 1rem;
+        overflow: hidden;
+        position: relative;
+        z-index: 2;
+      }
+      .recommended img{
+        width: 100%;
+        height:100%;
+
+        object-fit: cover;
+        object-position:center;
+      }
+      .recommended h3{
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        padding:12.5rem;
+        background-color: #0007;
+        color:white;
+        z-index: 10;
+        text-align: center;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <nav>
-          <div class="container">
-            <div class="nav">
-              <img src="../images/Travelo Logo.jpg" alt="Travelo Logo" />
-              <ul>
-                <li>
-                  <a href="../index.html" class="link">Home</a>
-                  <a href="./about.html" class="link">About Us</a>
-                </li>
-                <li>
-                  <a href="#" class="link">Destinations</a>
-                  <a href="./services.html" class="link">Features</a>
-                </li>
-                <li>
-                  <a href="./prices.html" class="link">Pricing</a>
-                  <a href="./reviews.html" class="link">Reviews</a>
-                </li>
-              </ul>
-              <div class="cta">
-                <button class="cta__btn">CONTACT US</button>
-                <img src="../images/icons/cta-btn.png" alt="cta button icon" />
-              </div>
+      <nav>
+        <div class="container">
+          <div class="nav">
+            <img src="../images/Travelo Logo.jpg" alt="Travelo Logo" />
+            <ul>
+              <li>
+                <a href="../index.html" class="link">Home</a>
+                <a href="./about.html" class="link">About Us</a>
+              </li>
+              <li>
+                <a href="#" class="link">Destinations</a>
+                <a href="./services.html" class="link">Features</a>
+              </li>
+              <li>
+                <a href="./prices.html" class="link">Pricing</a>
+                <a href="./reviews.html" class="link">Reviews</a>
+              </li>
+            </ul>
+            <div class="cta">
+              <button class="cta__btn">CONTACT US</button>
+              <img src="../images/icons/cta-btn.png" alt="cta button icon" />
             </div>
           </div>
-        </nav>
+        </div>
+      </nav>
     </header>
     <main>
-        <section>
-            <div class="container">
-                <div id="grid__destinations"></div>
-            </div>
-        </section>
+      <section>
+        <div class="container">
+          <h1>Find Your Next Vacation Spot</h1>
+          <form id="search">
+            <label for="place">Enter some place you want to visit</label>
+            <input type="text" id="place" required />
+            <input type="submit" value="Search" />
+          </form>
+        </div>
+        <div id="grid__destinations"></div>
+      </section>
     </main>
     <footer>
       <div class="container">
@@ -71,9 +140,12 @@
           <div class="newsletter">
             <h3>Join Our Newsletter</h3>
             <input type="email" placeholder="Enter your e-mail" />
-            <img src="../images/icons/cta-btn.png" alt="Submit Icon" onclick="showPopup()"/>
+            <img
+              src="../images/icons/cta-btn.png"
+              alt="Submit Icon"
+              onclick="showPopup()"
+            />
             <div id="popup" class="popup"></div>
-
           </div>
         </div>
         <hr />
@@ -118,5 +190,5 @@
     </footer>
   </body>
   <script src="../main.js"></script>
-<script src="../scripts/destinations.js"></script>
+  <script src="../scripts/destinations.js"></script>
 </html>

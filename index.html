@@ -23,7 +23,9 @@
                 <a href="/templates/about.html" class="link">About Us</a>
               </li>
               <li>
-                <a href="/templates/destinations.html" class="link">Destinations</a>
+                <a href="/templates/destinations.html" class="link"
+                  >Destinations</a
+                >
                 <a href="/templates/services.html" class="link">Features</a>
               </li>
               <li>
@@ -335,7 +337,11 @@
           <div class="newsletter">
             <h3>Join Our Newsletter</h3>
             <input type="email" placeholder="Enter your e-mail" />
-            <img src="./images/icons/cta-btn.png" alt="Submit Icon" onclick="showPopup()"/>
+            <img
+              src="./images/icons/cta-btn.png"
+              alt="Submit Icon"
+              onclick="showPopup()"
+            />
             <div id="popup" class="popup"></div>
           </div>
         </div>
@@ -382,4 +388,11 @@
   </body>
   <script src="./main.js
   "></script>
+  <script>
+    let joinUsBtn = document.getElementById("join");
+
+    joinUsBtn.addEventListener("click", function () {
+      window.location.href = "Popups/signup.html";
+    });
+  </script>
 </html>
