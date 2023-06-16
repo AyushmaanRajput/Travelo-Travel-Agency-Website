@@ -4,20 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Our Services | Your Travel Agency</title>
     <style>
       /* CSS styles */
+      p{
+        font-size: 1rem;
+      }
+      main h2{
+        margin-bottom: 1rem;
+        font-size: 3rem;
+      }
       .service {
         display: flex;
         align-items: center;
-        margin-bottom: 30px;
+        margin-bottom: 3rem;
+        box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+        padding:1rem;
+        border-radius: 5rem 1rem 1rem 5rem;
+        transition: all .1s ease-in;
+        cursor: pointer;
       }
+      .service:hover{
+        box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+      }
+      .service img{
+        width:15rem;
+        height: 15rem;
+        border-radius: 4rem 1rem 1rem 4rem;
 
-      .service-image {
-        width: 150px;
-        height: 150px;
-        background-color: #ccc;
-        margin-right: 20px;
+        margin-right: 1rem;
       }
 
       .service-details {
@@ -58,9 +80,9 @@
         <h1>Our Services</h1>
 
         <div class="service">
-          <div class="service-image"></div>
+          <img src="https://images.unsplash.com/photo-1578894381163-e72c17f2d45f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1506&q=80" alt="Service Image">
           <div class="service-details">
-            <h2>Travel Planning</h2>
+            <h2><i class="fa-solid fa-suitcase-rolling" style="color: #f5c94f;"></i> Travel Planning</h2>
             <p>
               Let our expert travel planners take care of all the details for
               your next trip. We'll design a personalized itinerary based on
@@ -71,9 +93,9 @@
         </div>
 
         <div class="service">
-          <div class="service-image"></div>
+          <img src="https://images.unsplash.com/photo-1483450388369-9ed95738483c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Service Image">
           <div class="service-details">
-            <h2>Flight Booking</h2>
+            <h2><i class="fa-solid fa-plane-circle-check" style="color: #d58170;"></i> Flight Booking</h2>
             <p>
               Book your flights with ease through our reliable and efficient
               flight booking services. We have access to a wide range of
@@ -84,9 +106,9 @@
         </div>
 
         <div class="service">
-          <div class="service-image"></div>
+          <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8QWNjb21vZGF0aW9ufGVufDB8fDB8fHww&auto=format&fit=crop&w=400&q=60" alt="Service Image">
           <div class="service-details">
-            <h2>Accommodation</h2>
+            <h2><i class="fa-solid fa-bed" style="color: #d411a0;"></i> Accommodation</h2>
             <p>
               Find the perfect place to stay during your trip with our
               accommodation services. Whether you prefer luxury hotels, cozy bed
@@ -97,9 +119,9 @@
         </div>
 
         <div class="service">
-          <div class="service-image"></div>
+          <img src="https://images.unsplash.com/photo-1600664262559-fe224e7734bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dG91ciUyMGd1aWRlfGVufDB8fDB8fHww&auto=format&fit=crop&w=400&q=60" alt="Service Image">
           <div class="service-details">
-            <h2>Guided Tours</h2>
+            <h2><i class="fa-solid fa-person-military-to-person" style="color: #4caf50;"></i> Guided Tours</h2>
             <p>
               Immerse yourself in the local culture and discover hidden gems
               with our guided tours. Our experienced tour guides will accompany
@@ -110,9 +132,9 @@
         </div>
 
         <div class="service">
-          <div class="service-image"></div>
+          <img src="https://images.unsplash.com/photo-1529369623266-f5264b696110?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2FyJTIwcmVudGFsfGVufDB8fDB8fHww&auto=format&fit=crop&w=400&q=60" alt="Service Image">
           <div class="service-details">
-            <h2>Car Rentals</h2>
+            <h2><i class="fa-solid fa-car-on" style="color: #6a96e2;"></i> Car Rentals</h2>
             <p>
               Explore your destination at your own pace with our car rental
               services. We offer a wide selection of vehicles to suit your
@@ -122,19 +144,6 @@
           </div>
         </div>
 
-        <div class="service">
-          <div class="service-image"></div>
-          <div class="service-details">
-            <h2>Cruise Bookings</h2>
-            <p>
-              Embark on a memorable cruise adventure with our cruise booking
-              services. Whether you want to sail through crystal-clear waters,
-              explore vibrant coastal cities, or indulge in luxury onboard
-              amenities, we'll help you find the perfect cruise for your
-              preferences.
-            </p>
-          </div>
-        </div>
       </div>
     </main>
     <footer>

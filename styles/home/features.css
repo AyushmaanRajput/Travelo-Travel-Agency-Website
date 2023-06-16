@@ -38,9 +38,3 @@
   background-color: white;
   margin-bottom: 2rem;
 }
-#features > .container > div > div > h3 {
-  font-size: var(--h3);
-  margin-bottom: 1rem;
-  color: var(--headings);
-}
-

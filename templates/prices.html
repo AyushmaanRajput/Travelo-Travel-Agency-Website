@@ -1,177 +1,238 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../main.css" />
-  <title>Prices | Your Travel Agency</title>
-  <style>
-    /* CSS styles */
-    .card {
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      padding: 20px;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    
-    .card img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      margin-bottom: 10px;
-    }
-    
-    .card h2 {
-      margin-bottom: 10px;
-    }
-    
-    .card ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    
-    .card ul li {
-      margin-bottom: 5px;
-    }
-    
-    .buy-button {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #ccc;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-  </style>
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Prices | Your Travel Agency</title>
+    <style>
+      /* CSS styles */
+      main .container {
+        padding-bottom: 5rem;
+      }
+      main h1 {
+        margin-bottom: 1rem;
+      }
+      p {
+        font-size: 1.25rem;
+        margin-bottom: 3rem;
+      }
+      h2 {
+        margin-bottom: 1rem;
+        font-size: 3rem;
+      }
+      .prices__container {
+        display: flex;
+        align-items: center;
+
+        justify-content: space-between;
+      }
+      .card {
+        width: 32%;
+        border-radius: 1rem;
+        box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
+        padding: 1rem;
+        margin-bottom: 20px;
+      }
+
+      .card img {
+        width: 100%;
+        height:250px;
+        border-radius: 0.5rem;
+        margin-bottom: 1rem;
+        object-position: center;
+      }
+
+      .card h2 {
+        margin-bottom: 10px;
+      }
+
+      .card ul {
+        list-style-type: none;
+        padding: 0;
+        margin-bottom: 1rem;
+      }
+
+      .card ul li {
+        margin-bottom: 5px;
+      }
+
+      .buy-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #ccc;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
     <header>
-        <nav>
-          <div class="container">
-            <div class="nav">
-              <img src="../images/Travelo Logo.jpg" alt="Travelo Logo" />
-              <ul>
-                <li>
-                  <a href="../index.html" class="link">Home</a>
-                  <a href="./about.html" class="link">About Us</a>
-                </li>
-                <li>
-                  <a href="destinations.html" class="link">Destinations</a>
-                  <a href="./services.html" class="link">Features</a>
-                </li>
-                <li>
-                  <a href="#" class="link">Pricing</a>
-                  <a href="reviews.html" class="link">Reviews</a>
-                </li>
-              </ul>
-              <div class="cta">
-                <button class="cta__btn">CONTACT US</button>
-                <img src="../images/icons/cta-btn.png" alt="cta button icon" />
-              </div>
-            </div>
-          </div>
-        </nav>
-      </header>
-      <main>
-          <div class="container">
-            <h1>Prices</h1>
-            
-            <div class="card">
-              <img src="placeholder.jpg" alt="Tier 1">
-              <h2>Tier 1</h2>
-              <ul>
-                <li>Facility 1</li>
-                <li>Facility 2</li>
-                <li>Facility 3</li>
-              </ul>
-              <button class="buy-button">Buy Now</button>
-            </div>
-            
-            <div class="card">
-              <img src="placeholder.jpg" alt="Tier 2">
-              <h2>Tier 2</h2>
-              <ul>
-                <li>Facility 1</li>
-                <li>Facility 2</li>
-                <li>Facility 3</li>
-              </ul>
-              <button class="buy-button">Buy Now</button>
-            </div>
-            
-            <div class="card">
-              <img src="placeholder.jpg" alt="Tier 3">
-              <h2>Tier 3</h2>
-              <ul>
-                <li>Facility 1</li>
-                <li>Facility 2</li>
-                <li>Facility 3</li>
-              </ul>
-              <button class="buy-button">Buy Now</button>
-            </div>
-          </div>
-      </main>
-      <footer>
+      <nav>
         <div class="container">
-          <div>
-            <div class="socials">
-              <h3>Leading the way in adventure</h3>
-              <div>
-                <img src="../images/icons/facebook.svg" alt="Facebook Icon" />
-                <img src="../images/icons/instagram.svg" alt="Instagram Icon" />
-                <img src="../images/icons/twitter.svg" alt="Twitter Icon" />
-                <img src="../images/icons/youtube.svg" alt="Youtube Icon" />
-              </div>
-            </div>
-            <div class="newsletter">
-              <h3>Join Our Newsletter</h3>
-              <input type="email" placeholder="Enter your e-mail" />
-              <img src="../images/icons/cta-btn.png" alt="Submit Icon" onclick="showPopup()"/>
-              <div id="popup" class="popup"></div>
-  
-            </div>
-          </div>
-          <hr />
-          <div>
-            <div>
-              <img src="../images/Travelo Logo.jpg" alt="Travelo Logo" />
-              <p>
-                Travell plans are not really an instrument themselves but a
-                delivery mechanism or strategy for mostly others
-              </p>
-            </div>
-            <div>
-              <h4>Contact</h4>
-              <a href="/">+913134566585</a>
-              <a href="">info@travelo.com</a>
-              <a href="">support@travelo.com</a>
-            </div>
-            <div>
-              <h4>Company</h4>
-              <a href="/">About Us</a>
-              <a href="">Features</a>
-              <a href="">Careers</a>
-            </div>
-            <div>
-              <h4>Resource</h4>
-              <a href="/">Press Info</a>
-              <a href="">Customers</a>
-              <a href="">Reviews</a>
-            </div>
-          </div>
-          <hr />
-          <div>
-            <p>@2023 travelo | All Rights Reserved</p>
-            <div>
-              <p>We Accept Payment:</p>
-              <img src="../images/icons/logos_stripe.svg" alt="Stripe Logo" />
-              <img src="../images/icons/Paypal.svg" alt="Paypal Logo" />
-              <img src="../images/icons/Payonner 1.svg" alt="Payoneer Logo" />
+          <div class="nav">
+            <img src="../images/Travelo Logo.jpg" alt="Travelo Logo" />
+            <ul>
+              <li>
+                <a href="../index.html" class="link">Home</a>
+                <a href="./about.html" class="link">About Us</a>
+              </li>
+              <li>
+                <a href="destinations.html" class="link">Destinations</a>
+                <a href="./services.html" class="link">Features</a>
+              </li>
+              <li>
+                <a href="#" class="link">Pricing</a>
+                <a href="reviews.html" class="link">Reviews</a>
+              </li>
+            </ul>
+            <div class="cta">
+              <button class="cta__btn">CONTACT US</button>
+              <img src="../images/icons/cta-btn.png" alt="cta button icon" />
             </div>
           </div>
         </div>
-      </footer>
-    </body>
-    <script src="../main.js"></script>
+      </nav>
+    </header>
+    <main>
+      <div class="container">
+        <h1>Prices</h1>
+        <p>
+          The prices
+          <i class="fa-solid fa-money-bill-wave" style="color: #85bb65"></i> of
+          each tier of our packages depends upon which city
+          <i class="fa-solid fa-city" style="color: #aa780e"></i> you choose,
+          Here are 3 tiers:
+        </p>
+        <div class="prices__container">
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Tier 1" />
+            <h2>Basic</h2>
+            <ul>
+              <li><i class="fa-solid fa-check" style="color: #4caf50"></i> Accommodation Arrangements</li>
+              <li><i class="fa-solid fa-check" style="color: #4caf50"></i> Booking Services</li>
+              <li><i class="fa-solid fa-check" style="color: #4caf50"></i> Customer Service</li>
+              <li><i class="fa-solid fa-check" style="color: #4caf50"></i> Expertise</li>
+              <li><i class="fa-solid fa-xmark" style="color: #ef4e4e;"></i> Travel Insurance</li>
+              <li><i class="fa-solid fa-xmark" style="color: #ef4e4e;"></i> Visa and Passport Services</li>
+              <li><i class="fa-solid fa-xmark" style="color: #ef4e4e;"></i> Guided Tours and Excursions</li>
+              <li><i class="fa-solid fa-xmark" style="color: #ef4e4e;"></i> Restaurant Reservations</li>
+              <li><i class="fa-solid fa-xmark" style="color: #ef4e4e;"></i> Multilingual Travel Guides</li>
+              <li><i class="fa-solid fa-xmark" style="color: #ef4e4e;"></i> Portable Wi-Fi</li>
+            </ul>
+            <button class="buy-button">Buy Now</button>
+          </div>
+
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1488345979593-09db0f85545f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Tier 2" />
+            <h2>Premium</h2>
+            <ul>
+              <li><i class="fa-solid fa-check" style="color: #4caf50"></i> Accommodation Arrangements</li>
+              <li><i class="fa-solid fa-check" style="color: #4caf50"></i> Booking Services</li>
+              <li><i class="fa-solid fa-check" style="color: #4caf50"></i> Customer Service</li>
+              <li><i class="fa-solid fa-check" style="color: #4caf50"></i> Expertise</li>
+              <li><i class="fa-solid fa-check" style="color: #4caf50"></i> Travel Insurance</li>
+              <li><i class="fa-solid fa-check" style="color: #4caf50"></i> Visa and Passport Services</li>
+              <li><i class="fa-solid fa-check" style="color: #4caf50"></i> Guided Tours and Excursions</li>
+              <li><i class="fa-solid fa-xmark" style="color: #ef4e4e;"></i> Restaurant Reservations</li>
+              <li><i class="fa-solid fa-xmark" style="color: #ef4e4e;"></i> Multilingual Travel Guides</li>
+              <li><i class="fa-solid fa-xmark" style="color: #ef4e4e;"></i> Portable Wi-Fi</li>
+            </ul>
+            <button class="buy-button">Buy Now</button>
+          </div>
+
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1519868343531-805e97cbda3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80" alt="Tier 3" />
+            <h2>Elite</h2>
+            <ul>
+              <li><i class="fa-solid fa-check" style="color: #4caf50"></i> Accommodation Arrangements</li>
+              <li><i class="fa-solid fa-check" style="color: #4caf50"></i> Booking Services</li>
+              <li><i class="fa-solid fa-check" style="color: #4caf50"></i> Customer Service</li>
+              <li><i class="fa-solid fa-check" style="color: #4caf50"></i> Expertise</li>
+              <li><i class="fa-solid fa-check" style="color: #4caf50"></i> Travel Insurance</li>
+              <li><i class="fa-solid fa-check" style="color: #4caf50"></i> Visa and Passport Services</li>
+              <li><i class="fa-solid fa-check" style="color: #4caf50"></i> Guided Tours and Excursions</li>
+              <li><i class="fa-solid fa-check" style="color: #4caf50"></i> Restaurant Reservations</li>
+              <li><i class="fa-solid fa-check" style="color: #4caf50"></i> Multilingual Travel Guides</li>
+              <li><i class="fa-solid fa-check" style="color: #4caf50"></i> Portable Wi-Fi</li>
+            </ul>
+            <button class="buy-button">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <div>
+          <div class="socials">
+            <h3>Leading the way in adventure</h3>
+            <div>
+              <img src="../images/icons/facebook.svg" alt="Facebook Icon" />
+              <img src="../images/icons/instagram.svg" alt="Instagram Icon" />
+              <img src="../images/icons/twitter.svg" alt="Twitter Icon" />
+              <img src="../images/icons/youtube.svg" alt="Youtube Icon" />
+            </div>
+          </div>
+          <div class="newsletter">
+            <h3>Join Our Newsletter</h3>
+            <input type="email" placeholder="Enter your e-mail" />
+            <img
+              src="../images/icons/cta-btn.png"
+              alt="Submit Icon"
+              onclick="showPopup()"
+            />
+            <div id="popup" class="popup"></div>
+          </div>
+        </div>
+        <hr />
+        <div>
+          <div>
+            <img src="../images/Travelo Logo.jpg" alt="Travelo Logo" />
+            <p>
+              Travell plans are not really an instrument themselves but a
+              delivery mechanism or strategy for mostly others
+            </p>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <a href="/">+913134566585</a>
+            <a href="">info@travelo.com</a>
+            <a href="">support@travelo.com</a>
+          </div>
+          <div>
+            <h4>Company</h4>
+            <a href="/">About Us</a>
+            <a href="">Features</a>
+            <a href="">Careers</a>
+          </div>
+          <div>
+            <h4>Resource</h4>
+            <a href="/">Press Info</a>
+            <a href="">Customers</a>
+            <a href="">Reviews</a>
+          </div>
+        </div>
+        <hr />
+        <div>
+          <p>@2023 travelo | All Rights Reserved</p>
+          <div>
+            <p>We Accept Payment:</p>
+            <img src="../images/icons/logos_stripe.svg" alt="Stripe Logo" />
+            <img src="../images/icons/Paypal.svg" alt="Paypal Logo" />
+            <img src="../images/icons/Payonner 1.svg" alt="Payoneer Logo" />
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="../main.js"></script>
 </html>
