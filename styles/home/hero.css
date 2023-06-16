@@ -4,14 +4,10 @@
 
 /* Hero Heading & Button Styles */
 h1 {
-  font-size: var(--h1);
-  font-weight: bolder;
   text-align: center;
-  letter-spacing: -2px;
   max-width: 90%;
+
   margin: 0 auto 3rem auto;
-  padding-top: 3rem;
-  line-height: 1.1;
 }
 h1 + div {
   width: 25rem;

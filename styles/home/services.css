@@ -6,13 +6,6 @@
     align-items: flex-start;
     justify-content: space-between;
 }
-#services .container h2{
-    font-size: var(--h2);
-    font-weight: bolder;
-    letter-spacing: -1px;
-    margin-bottom: 3rem;
-    line-height: 1;
-}
 
 #services .container >div{
     width:50%;

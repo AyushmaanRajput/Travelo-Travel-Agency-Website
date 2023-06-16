@@ -4,13 +4,8 @@
 
 #travel .container h2 {
   max-width: 40rem;
-  margin: auto;
   text-align: center;
-  font-size: var(--h2);
-  font-weight: bolder;
-  letter-spacing: -1px;
-  margin-bottom: 3rem;
-  line-height: 1;
+  margin: 0 auto 3rem auto;
 }
 #travel .container>div{
     display:flex;
