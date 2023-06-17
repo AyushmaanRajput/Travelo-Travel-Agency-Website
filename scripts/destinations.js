@@ -902,8 +902,9 @@ const cities = [
 ];
 
 let wishlistCart = JSON.parse(localStorage.getItem("wishlist")) || [];
-
 let grid = document.getElementById("grid__destinations");
+const loader = document.getElementById("loader");
+let loaderContainer = document.querySelector(".loader-container");
 
 let searchQuery;
 if (!searchQuery) {
@@ -913,7 +914,10 @@ if (!searchQuery) {
 
 async function getPhotos() {
   // const searchQuery = document.getElementById('search-query').value;
+  grid.innerHTML = "";
+  loaderContainer.style.height = "300px";
   try {
+    loader.style.display = "block";
     const response = await fetch(
       `https://api.unsplash.com/search/photos?query=${searchQuery}&client_id=3tYuCQraI7s0B2DooME9qes1DqQKGkrF8Fm64SWdKf8&per_page=${5}`
     );
@@ -924,8 +928,6 @@ async function getPhotos() {
   }
 }
 async function findImageUrl(query) {
-  // const searchQuery = document.getElementById('search-query').value;
-
   try {
     const response = await fetch(
       `https://api.unsplash.com/search/photos?query=${query}&client_id=3tYuCQraI7s0B2DooME9qes1DqQKGkrF8Fm64SWdKf8&per_page=${1}`
@@ -968,19 +970,24 @@ function createResult() {
         //
         response.map((el) => {
           imgUrls.push(el.urls.regular);
+          city.imgUrls = imgUrls;
           // console.log(el.urls.regular);
         });
+        setTimeout(() => {
+          // Display the city data in the DOM
+          displayCity(city);
+          // Hide the loader when data is loaded
+          loaderContainer.style.height = "auto";
+          loader.style.display = "none";
+        }, 1200);
       })
-      .then(() => {
-        city.imgUrls = imgUrls;
-        console.log(city);
-        displayCity(city);
-      })
-      .catch((e) => console.log(e));
+      .catch((e) => {
+        console.log(e);
+        loader.style.display = "none";
+      });
   }
 }
 function displayCity(city) {
-  grid.innerHTML = "";
   let cityImages = city.imgUrls;
   // console.log(cityImages);
   let collage = document.createElement("div");
@@ -992,9 +999,12 @@ function displayCity(city) {
     img.setAttribute("src", el);
     collage.append(img);
   });
+  grid.append(collage);
+  // collage.classList.add("fade-in");
 
   let cityContent = document.createElement("div");
   cityContent.setAttribute("class", "city-content");
+  // cityContent.setAttribute("class",'fade-in');
   let h2 = document.createElement("h2");
   h2.innerText = city.name;
   let population = document.createElement("p");
@@ -1030,6 +1040,7 @@ function displayCity(city) {
 
   let touristSpots = document.createElement("div");
   touristSpots.setAttribute("class", "recommended");
+  // touristSpots.setAttribute("class",'fade-in');
   let recommended = document.createElement("h2");
   recommended.style.margin = "2rem 0";
   recommended.innerText = `Common Tourist Spots in ${city.name}`;
@@ -1045,7 +1056,7 @@ function displayCity(city) {
     card.append(spot, spotName);
     touristSpots.append(card);
   }
-  grid.append(collage, cityContent, recommended, touristSpots);
+  grid.append(cityContent, recommended, touristSpots);
 }
 
 // Functionality for searching for places
@@ -1057,5 +1068,5 @@ form.addEventListener("submit", (e) => {
   searchQuery = searchInput.value.toLowerCase();
   // console.log(searchQuery);
   createResult();
-  // form.reset();
+  form.reset();
 });

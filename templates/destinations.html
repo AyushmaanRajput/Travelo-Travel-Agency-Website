@@ -26,7 +26,7 @@
         text-align: left;
       }
       #grid__destinations {
-        padding: 2rem;
+        padding: 2rem 0;
         text-align: center;
       }
       .collage {
@@ -130,8 +130,22 @@
         margin-right: 1rem;
         font-size: 1.25rem;
       }
-      #search #place:focus,#search #place:active {
-        border-color:#f5c94f;
+      #search #place:focus,
+      #search #place:active {
+        border-color: #f5c94f;
+      }
+
+      /* Loader */
+      .loader-container {
+        position: relative;
+      }
+      #loader{
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        z-index:100;
+        display:none;
       }
     </style>
   </head>
@@ -163,7 +177,7 @@
         </div>
       </nav>
     </header>
-    <main>
+    <main class="fade-in">
       <section>
         <div class="container">
           <h1>Find Your Next Vacation Spot</h1>
@@ -173,15 +187,19 @@
             <input type="submit" value="Search" class="primary-btn" />
           </form>
         </div>
-        <div id="grid__destinations"></div>
+        <div class="container ">
+          <div class="loader-container">
+            <img src="../images/Blocks-1s-200px.svg" alt="Loader" id="loader" />
+          </div>
+          <div id="grid__destinations"></div>
+        </div>
       </section>
     </main>
     <div class="wishlist" id="wishlist">
       <i class="fa-solid fa-cart-shopping"></i>
     </div>
     <div id="wishlist-container" class="wishlist-container">
-      <div class="wishlist-content" id="wishlist-content">
-      </div>
+      <div class="wishlist-content" id="wishlist-content"></div>
       <h4>Your Cart Total is <span id="total-amount"></span></h4>
     </div>
     <footer>

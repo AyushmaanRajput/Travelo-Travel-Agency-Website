@@ -292,6 +292,17 @@ footer .container > div:nth-of-type(3) > div img {
     opacity: 0;
   }
 }
+/* animation for sections animatoin when scrolling into view */
+.fade-in {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all .75s ease-in-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 /* Wishlist/cart button */
 .wishlist {
   position: fixed;
