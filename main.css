@@ -31,6 +31,9 @@ icon6:#C367B8;https://theme.zdassets.com/theme_assets/613805/20ca47df8103cd19bba
   box-sizing: border-box;
   /* border:1px solid red; */
 }
+html{
+  font-size:16px;
+}
 
 body {
   font-family: "DM Sans", sans-serif;
@@ -152,6 +155,9 @@ header nav .cta img {
   object-fit: cover;
   margin-left: 0.5rem;
   margin-right: auto;
+}
+#nav-icon{
+  display:none;
 }
 
 /* Footer Styles */
@@ -330,4 +336,104 @@ footer .container > div:nth-of-type(3) > div img {
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+}
+@media screen and (max-width: 1050px){
+  :root {
+    /* fontsizes */
+    --h1: 4rem;
+    --h2:2.75rem;
+    --h3: 1.25rem;
+    --h4: 1rem;
+  }
+  html{
+    font-size:14px;
+  }
+  .primary-btn {
+    padding: .75rem 1.5rem;
+  }
+  .container {
+    padding:0 1rem
+  }
+  header{
+    width: 100%;
+  }
+  header nav {
+    padding: 1rem;
+  }
+  .container {
+    width: 100%
+  }
+  .container > .nav {
+    padding: 1rem;
+  }
+  header nav ul {
+    display: flex;
+    margin-left: 8rem;
+  }
+  header nav ul li {
+    margin-left: 2rem;
+    width: 8rem;
+  }
+  header nav ul li::before {
+    height: 15px;
+  }
+
+  header nav .cta .cta__btn {
+    font-size: .75rem;
+  }
+  header nav .cta img {
+    width: 1.25rem;
+    margin-left: 0.25rem;
+  }
+  
+  /* Footer Styles */
+  footer {
+    padding: 2rem 1rem 0 1rem;
+  }
+  footer .container .socials div > img {
+    padding: 0.25rem;
+  }
+  footer .container .newsletter input {
+    padding: .75rem;
+  }
+
+  footer .container .newsletter img {
+    height: 1.5rem;
+  }
+
+  footer .container > div:nth-of-type(2) {
+    gap: 1rem;
+  }
+  
+  .popup {
+    bottom: 1rem;
+    right: 4rem;
+    background-color: #4caf50;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header nav ul ,header nav .cta{
+    display:none;
+  }
+  #nav-icon{
+    display:block;
+  }
+}
+@media screen and (max-width:635px){
+  :root {
+    /* fontsizes */
+    --h1: 3.25rem;
+    --h2:2.75rem;
+    --h3: 1.25rem;
+    --h4: 1rem;
+  }
+  html{
+    font-size:12px;
+  }
+  .primary-btn {
+    padding: .5rem 1.5rem;
+    font-size: .85rem;
+  }
+
 }

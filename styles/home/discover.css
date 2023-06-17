@@ -49,3 +49,39 @@
 #discover .card .location> p{
     font-size: 0.85rem;
 }
+@media screen and (max-width:1050px){
+    #discover{
+        padding:5rem 0 2rem 0;
+    }
+    
+    #discover .container>div{
+        width: 100%;
+        height:17rem;
+    }
+    
+    #discover .card{
+        height:15rem;
+    }
+
+    #discover .card .location{
+        font-size: 0.85rem;
+    }
+}
+@media screen and (max-width:635px){
+    
+    #discover .container>div{
+        width: 100%;
+        height:auto;
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        gap:1rem;
+    }
+    
+    #discover .card{
+        width: 100%;
+        height:15rem;
+    }
+    #discover .card:nth-of-type(2),#discover .card:nth-of-type(4){
+        align-self: auto;
+    }
+}

@@ -95,3 +95,85 @@ h1 + div > div > img {
   color: var(--paragraph);
   font-size: 0.95rem;
 }
+
+@media screen and (max-width:1050px){
+
+  h1 + div {
+    width: 20rem;
+    margin-bottom: 5rem;
+  }
+  
+  /* Hero Content Styles */
+  .hero__content > img {
+    position: absolute;
+    top: -20%;
+    left:-5%;
+    width:32.5rem;
+  }
+  .hero__content > p {
+    max-width: 5rem;
+    margin-right: 3rem;
+  }
+  .hero__content > p::after {
+    bottom: 20%;
+    width: 60px;
+  }
+  .hero__content > div {
+    margin-bottom: 3rem;
+  }
+  .hero__content > div > div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  .hero__content > div > div > img {
+    width: 4rem;
+    height: 4rem;
+  }
+  .hero__content > div > div h3 {
+    font-size: 1.25rem;
+  }
+  .hero__content > div > div p {
+    font-size: 0.85rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .hero__content > img {
+    position: absolute;
+    top: -5%;
+    left:-10%;
+    width:22.5rem;
+  }
+  .hero__content > p {
+    margin-right:1rem;
+  }
+  .hero__content > p::after {
+    right:-20%;
+    width: 40px;
+  }
+}
+@media screen and (max-width:635px){
+  .hero__content {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:center;
+  }
+  .hero__content > img {
+    position:static;
+    width: 25rem;
+    object-fit: contain;
+  }
+  .hero__content > p {
+    max-width: 10rem;
+    margin: 2rem 0 ;
+  }
+  .hero__content > p::after {
+    content: "";
+    position: static;
+  }
+  .hero__content > div {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0 0 0 ;
+  }
+}
