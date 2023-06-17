@@ -43,7 +43,7 @@ button {
 img {
   object-fit: cover;
 }
-a{
+a {
   text-decoration: none;
 }
 h1 {
@@ -312,19 +312,22 @@ footer .container > div:nth-of-type(3) > div img {
   color: #000;
 }
 
-.wishlist-content{
+.wishlist-container {
   display: none;
-  width:300px;
-  height:400px;
+  width: 300px;
+  height: 400px;
   position: fixed;
-  bottom:2rem;
-  right:7rem;
-  padding:1rem;
+  bottom: 2rem;
+  right: 7rem;
+  padding: 1rem;
   border-radius: 1rem;
   box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.1);
   background-color: #fff;
   z-index: 1000;
 }
-.show{
-  display:block;
+.show {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
 }
