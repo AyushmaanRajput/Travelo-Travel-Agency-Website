@@ -973,6 +973,7 @@ function createResult() {
       })
       .then(() => {
         city.imgUrls = imgUrls;
+        console.log(city);
         displayCity(city);
       })
       .catch((e) => console.log(e));
@@ -1010,6 +1011,8 @@ function displayCity(city) {
     if (wishlistCart.length == 0) {
       wishlistCart.push(obj);
       localStorage.setItem("wishlist", JSON.stringify(wishlistCart));
+      populateWishlistContent(wishlistCart);
+      displayTotal();
     } else {
       let flag = true;
       wishlistCart.map((el) => {
@@ -1018,6 +1021,8 @@ function displayCity(city) {
       if (flag) {
         wishlistCart.push(obj);
         localStorage.setItem("wishlist", JSON.stringify(wishlistCart));
+        populateWishlistContent(wishlistCart);
+        displayTotal();
       }
     }
   });
