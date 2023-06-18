@@ -40,10 +40,9 @@
                 <a href="./templates/reviews.html" class="link">Reviews</a>
               </li>
             </ul>
-            <div class="cta">
-              <button class="cta__btn">CONTACT US</button>
-              <img src="./images/icons/cta-btn.png" alt="cta button icon" />
-            </div>
+              <div class="cta">
+                <a class="primary-btn small">Log In</a>
+              </div>
             <i
               class="fa-solid fa-bars"
               style="color: #000000"
@@ -343,7 +342,10 @@
     </div>
     <div id="wishlist-container" class="wishlist-container">
       <div class="wishlist-content" id="wishlist-content"></div>
-      <h4>Your Cart Total is <span id="total-amount"></span></h4>
+      <div>
+        <p style="margin-bottom: 1rem;">Total Estimated Price : <strong id="total-amount">0</strong></p>
+        <button id="buy"class="primary-btn">Checkout Now</button>
+      </div>
     </div>
     <footer>
       <div class="container">
@@ -412,12 +414,5 @@
   <script src="./main.js
   "></script>
   <script>
-    let joinUsBtn = document.getElementById("join");
-
-    joinUsBtn.addEventListener("click", function () {
-      window.location.href = "Popups/signup.html";
-    });
-
-    
   </script>
 </html>

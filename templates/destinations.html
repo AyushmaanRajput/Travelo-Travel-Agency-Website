@@ -49,6 +49,12 @@
         border-radius: 1rem;
         width: 100%;
         height: 100%;
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+      }
+      .collage img:hover {
+        transform: scale(102%);
+        box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
       }
       .img-1 {
         grid-area: img1;
@@ -78,8 +84,7 @@
       }
       .recommended div {
         width: 32%;
-        max-height: 15rem;
-        min-height: 10rem;
+        max-height: 12rem;
         border-radius: 1rem;
         overflow: hidden;
         position: relative;
@@ -91,10 +96,7 @@
       }
       .recommended img {
         width: 100%;
-        height: 100%;
-
         object-fit: cover;
-        object-position: center;
       }
       .recommended h3 {
         position: absolute;
@@ -139,13 +141,87 @@
       .loader-container {
         position: relative;
       }
-      #loader{
-        position:absolute;
-        top:50%;
-        left:50%;
+      #loader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
         transform: translate(-50%, -50%);
-        z-index:100;
-        display:none;
+        z-index: 100;
+        display: none;
+      }
+      #most-searched {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+      }
+      #most-searched > div {
+        width: 100%;
+        max-height: 12rem;
+        border-radius: 1rem;
+        overflow: hidden !important;
+        position: relative;
+        cursor: pointer;
+      }
+      #most-searched > div img {
+        width: 100%;
+        object-fit: cover;
+      }
+      #most-searched > div h3 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 12.5rem;
+        background-color: #0007;
+        opacity: 0;
+        color: white;
+        z-index: 10;
+        text-align: center;
+        transition: opacity 1s ease-in-out;
+        cursor: pointer;
+      }
+      #most-searched > div:hover h3 {
+        opacity: 1;
+      }
+      @media screen and (max-width: 1050px) {
+        #most-searched {
+          grid-template-columns: 1fr 1fr;
+        }
+        #most-searched > div img {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+      @media screen and (max-width: 768px) {
+        #search {
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start;
+          flex-direction: column;
+        }
+        #search > * {
+          margin-bottom: 1rem;
+        }
+        h1 {
+          margin-bottom: 2rem;
+        }
+        #search > input#place {
+          width: 100%;
+        }
+        #most-searched > div {
+          max-height: 10rem;
+        }
+      }
+      @media screen and (max-width: 500px) {
+        #most-searched {
+          grid-template-columns: 1fr;
+        }
+        #most-searched > div {
+          max-height: 10rem;
+        }
+        #most-search > div img {
+          object-position: bottom;
+        }
       }
     </style>
   </head>
@@ -170,8 +246,7 @@
               </li>
             </ul>
             <div class="cta">
-              <button class="cta__btn">CONTACT US</button>
-              <img src="../images/icons/cta-btn.png" alt="cta button icon" />
+              <a class="primary-btn small">Log In</a>
             </div>
           </div>
         </div>
@@ -187,11 +262,37 @@
             <input type="submit" value="Search" class="primary-btn" />
           </form>
         </div>
-        <div class="container ">
+        <div class="container">
           <div class="loader-container">
             <img src="../images/Blocks-1s-200px.svg" alt="Loader" id="loader" />
           </div>
           <div id="grid__destinations"></div>
+        </div>
+        <div class="container">
+          <h2>Most Searched Cities</h2>
+          <div id="most-searched">
+            <div>
+              <img
+                src="https://images.unsplash.com/photo-1550340499-a6c60fc8287c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="Paris"
+              />
+              <h3>Paris</h3>
+            </div>
+            <div>
+              <img
+                src="https://images.unsplash.com/photo-1604928141064-207cea6f571f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80"
+                alt="Tokyo"
+              />
+              <h3>Tokyo</h3>
+            </div>
+            <div>
+              <img
+                src="https://images.unsplash.com/photo-1523374228107-6e44bd2b524e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="New York"
+              />
+              <h3>New York</h3>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -200,7 +301,12 @@
     </div>
     <div id="wishlist-container" class="wishlist-container">
       <div class="wishlist-content" id="wishlist-content"></div>
-      <h4>Your Cart Total is <span id="total-amount"></span></h4>
+      <div>
+        <p style="margin-bottom: 1rem">
+          Total Estimated Price : <strong id="total-amount">0</strong>
+        </p>
+        <button id="buy" class="primary-btn">Checkout Now</button>
+      </div>
     </div>
     <footer>
       <div class="container">

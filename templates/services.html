@@ -38,12 +38,45 @@
         width:15rem;
         height: 15rem;
         border-radius: 4rem 1rem 1rem 4rem;
-
         margin-right: 1rem;
       }
 
       .service-details {
         flex: 1;
+      }
+      @media screen and (max-width: 1050px){
+      main h2{
+        font-size: 2rem;
+      }
+      .service img{
+        width: 10rem;
+        height: 10rem;
+        border-radius: 4rem 1rem 1rem 4rem;
+        margin-right: 1rem;
+      }
+      }
+      @media screen and (max-width: 635px) {
+        main h2{
+        font-size: 2rem;
+        margin-bottom: .5rem;
+      }
+      .service{
+        border-radius: 1rem;
+flex-direction: column;
+      }
+        .service img{
+        width: 100%;
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+        margin-right: auto !important;
+      }
+        .service-details{
+          text-align: center;
+        }
+        p{
+          margin-left: auto;
+          /* max-width: 20rem; */
+        }
       }
     </style>
   </head>
@@ -68,8 +101,7 @@
               </li>
             </ul>
             <div class="cta">
-              <button class="cta__btn">CONTACT US</button>
-              <img src="../images/icons/cta-btn.png" alt="cta button icon" />
+              <a class="primary-btn small">Log In</a>
             </div>
           </div>
         </div>
@@ -150,9 +182,11 @@
       <i class="fa-solid fa-cart-shopping"></i>
     </div>
     <div id="wishlist-container" class="wishlist-container">
-      <div class="wishlist-content" id="wishlist-content">
+      <div class="wishlist-content" id="wishlist-content"></div>
+      <div>
+        <p style="margin-bottom: 1rem;">Total Estimated Price : <strong id="total-amount">0</strong></p>
+        <button id="buy"class="primary-btn">Checkout Now</button>
       </div>
-      <h4>Your Cart Total is <span id="total-amount"></span></h4>
     </div>
     <footer>
       <div class="container">

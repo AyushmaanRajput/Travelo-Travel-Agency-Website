@@ -3,28 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="./main.css" />
     <title>Login/Signup Form</title>
     <style>
+      main {
+        min-height: 50vh;
+        position: relative;
+      }
+      .login {
+        padding: 2rem;
+        width: min(40rem, 100%);
+        box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 2rem;
+      }
 
       .tab {
         overflow: hidden;
-        margin-bottom: 20px;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
       }
 
       .tab button {
-        background-color: inherit;
-        float: left;
+        width: 50%;
+        padding: 1rem 0;
         border: none;
-        outline: none;
-        cursor: pointer;
-        padding: 10px 20px;
-        margin-right: 10px;
-        border-radius: 5px 5px 0 0;
+        background-color: var(--background);
+        font-size: 1.25rem;
       }
 
       .tab button.active {
-        background-color: #ccc;
+        background-color: #f5c94f;
       }
 
       .tabcontent {
@@ -47,6 +61,21 @@
         border-radius: 5px;
         display: none;
       }
+      #loginForm form,
+      #signupForm form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+      input {
+        padding: 0.75rem 1.5rem;
+        border-radius: 50px;
+        border: none;
+        border: 1px solid black;
+      }
+      input:focus {
+        border-color: #f5c94f;
+      }
     </style>
   </head>
   <body>
@@ -61,7 +90,9 @@
                 <a href="" class="link">About Us</a>
               </li>
               <li>
-                <a href="/templates/destinations.html" class="link">Destinations</a>
+                <a href="/templates/destinations.html" class="link"
+                  >Destinations</a
+                >
                 <a href="" class="link">Features</a>
               </li>
               <li>
@@ -70,83 +101,82 @@
               </li>
             </ul>
             <div class="cta">
-              <button class="cta__btn">CONTACT US</button>
-              <img src="../images/icons/cta-btn.png" alt="cta button icon" />
+              <a href="/" class="primary-btn small">Log In</a>
             </div>
           </div>
         </div>
       </nav>
     </header>
-    <div class="container">
-      <div class="tab">
-        <button
-          id="loginTab"
-          class="tablinks active"
-          onclick="openTab(event, 'loginForm')"
-        >
-          Login
-        </button>
-        <button
-          id="signupTab"
-          class="tablinks"
-          onclick="openTab(event, 'signupForm')"
-        >
-          Signup
-        </button>
-      </div>
+    <main>
+      <div class="container login">
+        <div class="tab">
+          <button
+            id="loginTab"
+            class="tablinks active"
+            onclick="openTab(event, 'loginForm')"
+          >
+            Login
+          </button>
+          <button
+            id="signupTab"
+            class="tablinks"
+            onclick="openTab(event, 'signupForm')"
+          >
+            Signup
+          </button>
+        </div>
+        <div>
+          <div id="loginForm" class="tabcontent">
+            <h3>Login</h3>
+            <form onsubmit="login(event)">
+              <input
+                type="email"
+                id="loginEmail"
+                placeholder="Email"
+                required
+              />
+              <input
+                type="password"
+                id="loginPassword"
+                placeholder="Password"
+                required
+              />
+              <button type="submit" class="primary-btn">Login</button>
+            </form>
+          </div>
 
-      <div id="loginForm" class="tabcontent">
-        <h3>Login</h3>
-        <form onsubmit="login(event)">
-          <input
-            type="email"
-            id="loginEmail"
-            placeholder="Email"
-            required
-          /><br />
-          <input
-            type="password"
-            id="loginPassword"
-            placeholder="Password"
-            required
-          /><br />
-          <button type="submit">Login</button>
-        </form>
+          <div id="signupForm" class="tabcontent">
+            <h3>Signup</h3>
+            <form onsubmit="signup(event)">
+              <input type="text" id="signupName" placeholder="Name" required />
+              <input
+                type="email"
+                id="signupEmail"
+                placeholder="Email"
+                required
+              />
+              <input
+                type="password"
+                id="signupPassword"
+                placeholder="Password"
+                required
+              />
+              <input
+                type="password"
+                id="signupConfirmPassword"
+                placeholder="Confirm Password"
+                required
+              />
+              <button type="submit" class="primary-btn">Signup</button>
+            </form>
+          </div>
+        </div>
       </div>
-
-      <div id="signupForm" class="tabcontent">
-        <h3>Signup</h3>
-        <form onsubmit="signup(event)">
-          <input
-            type="text"
-            id="signupName"
-            placeholder="Name"
-            required
-          /><br />
-          <input
-            type="email"
-            id="signupEmail"
-            placeholder="Email"
-            required
-          /><br />
-          <input
-            type="password"
-            id="signupPassword"
-            placeholder="Password"
-            required
-          /><br />
-          <input
-            type="password"
-            id="signupConfirmPassword"
-            placeholder="Confirm Password"
-            required
-          /><br />
-          <button type="submit">Signup</button>
-        </form>
+      <div id="successMessage">Success! You have logged in.</div>
+      <div id="signupSuccessMessage">
+        Success! Your account has been created.
       </div>
-    </div>
-    <div id="successMessage">Success! You have logged in.</div>
-    <div id="signupSuccessMessage">Success! Your account has been created.</div>
+    </main>
 
     <footer>
       <div class="container">
@@ -206,8 +236,14 @@
         </div>
       </div>
     </footer>
+    <script src="../main.js"></script>
     <script>
       // Check if the email already exists in local storage
+      let loggedIn = JSON.parse(localStorage.getItem("loggedIn"));
+
+      if (!loggedIn) {
+        localStorage.setItem("loggedIn", false);
+      }
       function isEmailExists(email) {
         const users = JSON.parse(localStorage.getItem("users"));
         if (users) {
@@ -236,7 +272,9 @@
           );
           if (user) {
             showLoginSuccessMessage();
+            localStorage.setItem("loggedIn", true);
             resetLoginForm();
+            window.location.href = "/";
           } else {
             alert("Invalid email or password.");
           }

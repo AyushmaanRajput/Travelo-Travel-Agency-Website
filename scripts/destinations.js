@@ -901,16 +901,19 @@ const cities = [
   },
 ];
 
-let wishlistCart = JSON.parse(localStorage.getItem("wishlist")) || [];
 let grid = document.getElementById("grid__destinations");
 const loader = document.getElementById("loader");
 let loaderContainer = document.querySelector(".loader-container");
-
+let mostSearched = Array.from(document.querySelectorAll("#most-searched>div"));
+// console.log(mostSearched);
 let searchQuery;
-if (!searchQuery) {
-  //Display Grid of recommended Cities
-  grid.innerHTML = "<h2>No Data Now</h2>";
-}
+
+mostSearched.forEach((el) => {
+  el.addEventListener("click", () => {
+    searchQuery = el.children[1].textContent.toLowerCase();
+    createResult();
+  });
+});
 
 async function getPhotos() {
   // const searchQuery = document.getElementById('search-query').value;
@@ -997,6 +1000,10 @@ function displayCity(city) {
     img.setAttribute("class", `img-${i + 1}`); //so that each image of collage get an class of their respective index number. eg img-1,img-2,img-3 etc
     // console.log(city.imgUrls[i]);
     img.setAttribute("src", el);
+    img.addEventListener("click", () => {
+      let link = el;
+      window.open(link, "_blank");
+    });
     collage.append(img);
   });
   grid.append(collage);
@@ -1018,20 +1025,20 @@ function displayCity(city) {
     let obj = {};
     obj["name"] = city.name;
     obj["price"] = city.price;
-    if (wishlistCart.length == 0) {
-      wishlistCart.push(obj);
-      localStorage.setItem("wishlist", JSON.stringify(wishlistCart));
-      populateWishlistContent(wishlistCart);
+    if (cart.length == 0) {
+      cart.push(obj);
+      localStorage.setItem("wishlist", JSON.stringify(cart));
+      populateWishlistContent(cart);
       displayTotal();
     } else {
       let flag = true;
-      wishlistCart.map((el) => {
+      cart.map((el) => {
         if (el.name == city.name) flag = false;
       });
       if (flag) {
-        wishlistCart.push(obj);
-        localStorage.setItem("wishlist", JSON.stringify(wishlistCart));
-        populateWishlistContent(wishlistCart);
+        cart.push(obj);
+        localStorage.setItem("wishlist", JSON.stringify(cart));
+        populateWishlistContent(cart);
         displayTotal();
       }
     }
