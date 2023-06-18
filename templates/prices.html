@@ -29,17 +29,15 @@
         font-size: 3rem;
       }
       .prices__container {
-        display: flex;
-        align-items: center;
-
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
       }
       .card {
-        width: 32%;
+        width: 100%;
         border-radius: 1rem;
         box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
         padding: 1rem;
-        margin-bottom: 20px;
       }
 
       .card img {
@@ -62,6 +60,21 @@
 
       .card ul li {
         margin-bottom: 5px;
+      }
+      @media screen and (max-width: 768px) {
+        .prices__container {
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem 1rem;
+        }
+      }
+      @media screen and (max-width: 500px) {
+        .prices__container {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+        .card img {
+          height: 150px;
+        }
       }
     </style>
   </head>
@@ -86,8 +99,7 @@
               </li>
             </ul>
             <div class="cta">
-              <button class="cta__btn">CONTACT US</button>
-              <img src="../images/icons/cta-btn.png" alt="cta button icon" />
+              <a class="primary-btn small">Log In</a>
             </div>
           </div>
         </div>
@@ -152,7 +164,6 @@
                 Portable Wi-Fi
               </li>
             </ul>
-            <button class="primary-btn">Buy Now</button>
           </div>
 
           <div class="card">
@@ -203,7 +214,6 @@
                 Portable Wi-Fi
               </li>
             </ul>
-            <button class="primary-btn">Buy Now</button>
           </div>
 
           <div class="card">
@@ -254,7 +264,6 @@
                 Portable Wi-Fi
               </li>
             </ul>
-            <button class="primary-btn">Buy Now</button>
           </div>
         </div>
       </div>
@@ -263,9 +272,13 @@
       <i class="fa-solid fa-cart-shopping"></i>
     </div>
     <div id="wishlist-container" class="wishlist-container">
-      <div class="wishlist-content" id="wishlist-content">
+      <div class="wishlist-content" id="wishlist-content"></div>
+      <div>
+        <p style="margin-bottom: 1rem">
+          Total Estimated Price : <strong id="total-amount">0</strong>
+        </p>
+        <button id="buy" class="primary-btn">Checkout Now</button>
       </div>
-      <h4>Your Cart Total is <span id="total-amount"></span></h4>
     </div>
     <footer>
       <div class="container">

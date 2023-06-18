@@ -20,7 +20,7 @@
       main h1 {
         margin-bottom: 1rem;
       }
-      main>.container>p {
+      main > .container > p {
         font-size: 1.25rem;
         margin-bottom: 2rem;
       }
@@ -30,7 +30,7 @@
 
       .button {
         display: inline-block;
-        padding: .75rem 1.5rem;
+        padding: 0.75rem 1.5rem;
         background-color: #000;
         color: #fff;
         border: none;
@@ -50,7 +50,7 @@
 
       .grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-gap: 1rem;
       }
 
@@ -67,6 +67,19 @@
         border-radius: 50%;
         margin-bottom: 1rem;
         object-position: top;
+      }
+      @media screen and (max-width: 500px) {
+        .button-group {
+          display: none;
+        }
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .review-card img {
+          width: 80px;
+          height: 80px;
+          margin-bottom: 0.5rem;
+        }
       }
     </style>
   </head>
@@ -91,8 +104,7 @@
               </li>
             </ul>
             <div class="cta">
-              <button class="cta__btn">CONTACT US</button>
-              <img src="../images/icons/cta-btn.png" alt="cta button icon" />
+              <a class="primary-btn small">Log In</a>
             </div>
           </div>
         </div>
@@ -103,13 +115,16 @@
         <h1>Reviews</h1>
         <p>Here is what some of our previous customers have to say about us!</p>
         <div class="button-group">
-          <button class="button active" data-columns="3">3</button>
-          <button class="button" data-columns="4">4</button>
+          <button class="button active" data-columns="2">2</button>
+          <button class="button" data-columns="3">3</button>
         </div>
 
         <div class="grid">
           <div class="review-card">
-            <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60" alt="Review" />
+            <img
+              src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60"
+              alt="Review"
+            />
             <h3>Jasmine Doe</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
@@ -117,7 +132,10 @@
             </p>
           </div>
           <div class="review-card">
-            <img src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Review" />
+            <img
+              src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+              alt="Review"
+            />
             <h3>John Smith</h3>
             <p>
               Ut efficitur nibh in pharetra congue. Nulla facilisi. Integer
@@ -125,7 +143,10 @@
             </p>
           </div>
           <div class="review-card">
-            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Review" />
+            <img
+              src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+              alt="Review"
+            />
             <h3>Mark Johnson</h3>
             <p>
               Suspendisse blandit ultrices nisi vitae aliquet. Integer lobortis
@@ -133,20 +154,28 @@
             </p>
           </div>
           <div class="review-card">
-            <img src="https://images.unsplash.com/photo-1685639837214-bedaccf96afc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyOHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60" alt="Review" />
+            <img
+              src="https://images.unsplash.com/photo-1685639837214-bedaccf96afc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyOHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60"
+              alt="Review"
+            />
             <h3>Sarah Thompson</h3>
             <p>
-              Ut feugiat nisl sit amet felis malesuada, eget suscipit velit luctus. Sed consequat tellus id consequat imperdiet.
+              Ut feugiat nisl sit amet felis malesuada, eget suscipit velit
+              luctus. Sed consequat tellus id consequat imperdiet.
             </p>
           </div>
           <div class="review-card">
-            <img src="https://images.unsplash.com/photo-1602233158242-3ba0ac4d2167?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z2lybHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60" alt="Review" />
+            <img
+              src="https://images.unsplash.com/photo-1602233158242-3ba0ac4d2167?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z2lybHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60"
+              alt="Review"
+            />
             <h3>Emily Davis</h3>
             <p>
-              Aliquam et odio sed est ullamcorper varius. Suspendisse sit amet ipsum malesuada, tincidunt odio et, ultricies ligula.
+              Aliquam et odio sed est ullamcorper varius. Suspendisse sit amet
+              ipsum malesuada, tincidunt odio et, ultricies ligula.
             </p>
           </div>
-          
+
           <!-- Add more review cards as needed -->
         </div>
       </div>
@@ -155,9 +184,13 @@
       <i class="fa-solid fa-cart-shopping"></i>
     </div>
     <div id="wishlist-container" class="wishlist-container">
-      <div class="wishlist-content" id="wishlist-content">
+      <div class="wishlist-content" id="wishlist-content"></div>
+      <div>
+        <p style="margin-bottom: 1rem">
+          Total Estimated Price : <strong id="total-amount">0</strong>
+        </p>
+        <button id="buy" class="primary-btn">Checkout Now</button>
       </div>
-      <h4>Your Cart Total is <span id="total-amount"></span></h4>
     </div>
     <footer>
       <div class="container">

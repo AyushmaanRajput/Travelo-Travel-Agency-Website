@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Checkout</title>
+    <style>
+      .checkout-items-container {
+        padding: 2rem 0 4rem 0;
+      }
+      .checkout-items-container table {
+        width: min(65rem, 100%);
+        margin: auto;
+      }
+      .checkout-items-container table thead {
+        width: 100%;
+        text-align: center;
+        background-color: #f5c94f;
+      }
+      .checkout-items-container table thead th {
+        padding: 1rem 0;
+        font-size: 1.25rem;
+      }
+      .checkout-items-container table tbody {
+        width: 100%;
+        text-align: center;
+      }
+      .checkout-items-container table tbody td {
+        padding: 1rem 0;
+        background-color: var(--highlight-dark);
+        font-size: 1rem;
+        transition: all 0.2s ease-out;
+      }
+      .checkout-items-container table tbody tr:hover td {
+        background-color: #e8e8e8;
+      }
+      .checkout-items-container table tbody td select {
+        border: 1px solid #6a96e2;
+        padding: 0.5rem;
+        color: #6a96e2;
+        cursor: pointer;
+        /* border-radius: 50px; */
+      }
+      .checkout-items-container table tbody td select:checked {
+        border-color: #6a96e2;
+      }
+      .checkout-items-container table tbody td select > option {
+        padding: 0.5rem 1rem;
+      }
+      .checkout-items-container table tbody td button {
+        border: none;
+        background-color: transparent;
+        border: 1px solid #e6707c;
+        border-radius: 50px;
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+        color: #e6707c;
+      }
+
+      .checkout-container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.2);
+        border-radius: 1rem;
+        overflow: hidden !important;
+        margin-bottom: 4rem;
+      }
+      .checkout-container > * {
+        width: 45%;
+      }
+      #checkout-form {
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        grid-template-areas:
+          "h3 h3"
+          "input-email input-email"
+          "input-card input-card"
+          "input-promo input-promo"
+          "payment payment"
+          "btn btn";
+      }
+      #checkout-form h3 {
+        grid-area: h3;
+      }
+      #checkout-form input {
+        grid-column: span 2;
+        padding: 0.75rem 1.5rem;
+        border-radius: 1rem;
+        border: none;
+        border: 1px solid black;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+      #checkout-form input:last-child {
+        border: none;
+        grid-column: span 1;
+        border-radius: 50px;
+        margin-bottom: 1rem;
+      }
+      #checkout-form > div {
+        grid-area: payment;
+        margin-bottom: 1rem;
+      }
+      #checkout-form > div > div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        padding: 0 1rem;
+      }
+
+      .checkout-container > div:nth-child(2) {
+        background-color: #f5c94f;
+        position: relative;
+        width: 50%;
+      }
+      .checkout-container > div:nth-child(2) > img {
+        position: relative;
+        padding: 2rem 0;
+      }
+      .checkout-container > div:nth-child(2) > img:nth-child(1) {
+        left: 10rem;
+      }
+      .checkout-container > div:nth-child(2) > img:nth-child(2) {
+        right: 3rem;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="container">
+          <div class="nav">
+            <img src="../images/Travelo Logo.jpg" alt="Travelo Logo" />
+            <ul>
+              <li>
+                <a href="../index.html" class="link">Home</a>
+                <a href="./about.html" class="link">About Us</a>
+              </li>
+              <li>
+                <a href="./destinations.html" class="link">Destinations</a>
+                <a href="./services.html" class="link">Features</a>
+              </li>
+              <li>
+                <a href="./prices.html" class="link">Pricing</a>
+                <a href="./reviews.html" class="link">Reviews</a>
+              </li>
+            </ul>
+            <div class="cta">
+              <a class="primary-btn small">Log In</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="fade-in">
+      <div class="container">
+        <div class="checkout-items-container">
+          <h2>Your Wishlist</h2>
+          <table id="checkout-wishlist">
+            <thead>
+              <th>City</th>
+              <th>Price</th>
+              <th>Tier</th>
+              <th>Remove City</th>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div class="checkout-container">
+          <form id="checkout-form">
+            <h3>Payment Details</h3>
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter your Email Address"
+            />
+            <input
+              type="text"
+              placeholder="xxxx xxxx xxxx xxxx"
+              id="credit-card"
+            />
+            <input
+              type="text"
+              id="promo-code"
+              placeholder="Enter Promo Code(optional)"
+            />
+            <div>
+              <div>
+                <h4>Subtotal</h4>
+                <strong id="sub-total">$96</strong>
+              </div>
+              <div>
+                <h4>Tax Applicable</h4>
+                <strong>$40</strong>
+              </div>
+              <div>
+                <h4>Grand Total</h4>
+                <strong id="grand-total">$96</strong>
+              </div>
+            </div>
+            <input type="submit" value="Make Payment" class="primary-btn" />
+          </form>
+          <div>
+            <img
+              src="../images/bg-card-back.png"
+              alt="Payment Card Back image"
+            />
+            <img
+              src="../images/bg-card-front.png"
+              alt="Payment Card Front IMage"
+            />
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="wishlist" id="wishlist" style="display: none">
+      <i class="fa-solid fa-cart-shopping"></i>
+    </div>
+    <div id="wishlist-container" class="wishlist-container">
+      <div class="wishlist-content" id="wishlist-content"></div>
+      <div>
+        <p style="margin-bottom: 1rem">
+          Total Estimated Price : <strong id="total-amount">0</strong>
+        </p>
+        <button id="buy" class="primary-btn">Checkout Now</button>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <div>
+          <div class="socials">
+            <h3>Leading the way in adventure</h3>
+            <div>
+              <img src="../images/icons/facebook.svg" alt="Facebook Icon" />
+              <img src="../images/icons/instagram.svg" alt="Instagram Icon" />
+              <img src="../images/icons/twitter.svg" alt="Twitter Icon" />
+              <img src="../images/icons/youtube.svg" alt="Youtube Icon" />
+            </div>
+          </div>
+          <div class="newsletter">
+            <h3>Join Our Newsletter</h3>
+            <input type="email" placeholder="Enter your e-mail" />
+            <img
+              src="../images/icons/cta-btn.png"
+              alt="Submit Icon"
+              onclick="showPopup()"
+            />
+            <div id="popup" class="popup"></div>
+          </div>
+        </div>
+        <hr />
+        <div>
+          <div>
+            <img src="../images/Travelo Logo.jpg" alt="Travelo Logo" />
+            <p>
+              Travell plans are not really an instrument themselves but a
+              delivery mechanism or strategy for mostly others
+            </p>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <a href="/">+913134566585</a>
+            <a href="">info@travelo.com</a>
+            <a href="">support@travelo.com</a>
+          </div>
+          <div>
+            <h4>Company</h4>
+            <a href="/">About Us</a>
+            <a href="">Features</a>
+            <a href="">Careers</a>
+          </div>
+          <div>
+            <h4>Resource</h4>
+            <a href="/">Press Info</a>
+            <a href="">Customers</a>
+            <a href="">Reviews</a>
+          </div>
+        </div>
+        <hr />
+        <div>
+          <p>@2023 travelo | All Rights Reserved</p>
+          <div>
+            <p>We Accept Payment:</p>
+            <img src="../images/icons/logos_stripe.svg" alt="Stripe Logo" />
+            <img src="../images/icons/Paypal.svg" alt="Paypal Logo" />
+            <img src="../images/icons/Payonner 1.svg" alt="Payoneer Logo" />
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="../main.js"></script>
+  <script>
+    let subTotal = document.getElementById("sub-total");
+    let grandTotal = document.getElementById("grand-total");
+    let checkoutCart = JSON.parse(localStorage.getItem("checkout"));
+    let checkoutCartContainer = document.getElementById("checkout-wishlist");
+    let tbody = document.querySelector("tbody");
+    // console.log(checkoutCart);
+    displayCheckoutCart();
+    displaySubTotal();
+    function displayCheckoutCart() {
+      tbody.innerText = "";
+      checkoutCart.map((item, i) => {
+        // console.log(item);
+        let tr = document.createElement("tr");
+
+        let city = document.createElement("td");
+        city.innerText = item.name;
+
+        let updatedPrice = item.updatedPrice;
+        let price = document.createElement("td");
+        let plan;
+        if (updatedPrice) {
+          if (updatedPrice / 3 == item.price) {
+            plan = "Elite";
+          } else if (updatedPrice / 2 == item.price) {
+            plan = "Premium";
+          } else if (updatedPrice == item.price) {
+            plan = "Basic";
+          }
+          price.innerText = `$${updatedPrice}`;
+        } else {
+          plan = "Basic";
+          price.innerText = `$${item.price}`;
+        }
+        console.log(price);
+
+        let tierTD = document.createElement("td");
+        let tier = document.createElement("select");
+        let options = ["Basic", "Premium", "Elite"];
+        for (let i = 0; i < options.length; i++) {
+          let optionElement = document.createElement("option");
+          optionElement.text = options[i];
+          optionElement.value = options[i];
+          tier.appendChild(optionElement);
+        }
+        for (let value of options) {
+          if (plan == value) {
+            tier.value = value;
+          }
+        }
+        tier.addEventListener("change", () => {
+          let v = tier.value;
+          let updatedPrice;
+          if (v == "Basic") {
+            updatedPrice = item.price;
+          } else if (v == "Elite") {
+            updatedPrice = 3 * item.price;
+          } else if (v == "Premium") {
+            updatedPrice = 2 * item.price;
+          }
+          checkoutCart[i].updatedPrice = updatedPrice;
+          price.innerText = `$${updatedPrice}`;
+          localStorage.setItem("wishlist", JSON.stringify(checkoutCart));
+          localStorage.setItem("checkout", JSON.stringify(checkoutCart));
+          displaySubTotal();
+        });
+        tierTD.append(tier);
+
+        // let days = document.createElement("td");
+        // let daysInp = document.createElement("input");
+        // daysInp.setAttribute("type", "number");
+        // if (!item.days) {
+        //   daysInp.value = 1;
+        // } else {
+        //   daysInp.value = item.days;
+        // }
+        // daysInp.addEventListener("change", () => {
+        //   let newValue = daysInp.value;
+        //   item.days = newValue;
+        // });
+        // days.appendChild(daysInp);
+
+        let td = document.createElement("td");
+        let remove = document.createElement("button");
+        remove.innerText = "Remove";
+        remove.addEventListener("click", () => {
+          checkoutCart.splice(i, 1);
+          localStorage.setItem("wishlist", JSON.stringify(checkoutCart));
+          localStorage.setItem("checkout", JSON.stringify(checkoutCart));
+          displayCheckoutCart();
+          displaySubTotal();
+        });
+        td.append(remove);
+
+        tr.append(city, price, tierTD, td);
+        tbody.append(tr);
+      });
+    }
+
+    function displaySubTotal() {
+      let sum = 0;
+      subTotal.innerText = "";
+      grandTotal.innerText = "";
+      checkoutCart.forEach((item) => {
+        if (item.updatedPrice) {
+          sum += item.updatedPrice;
+        } else {
+          sum += item.price;
+        }
+      });
+      if (sum == 0) {
+        subTotal.innerText = `$${0}`;
+        grandTotal.innerText = `$${0}`;
+      } else {
+        subTotal.innerText = `$${sum}`;
+        grandTotal.innerText = `$${sum + 40}`;
+      }
+    }
+  </script>
+</html>
