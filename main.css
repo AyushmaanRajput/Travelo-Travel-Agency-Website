@@ -2,7 +2,7 @@
 :root {
   /* Colors */
   --headings: #000000;
-  --background: #f9f9f9;
+  --background: #ebebeb;
   --paragraph: #696969;
   --highlight-light: #f6f6f6;
   --highlight-dark: #f2f2f2;
@@ -31,7 +31,7 @@ icon6:#C367B8;https://theme.zdassets.com/theme_assets/613805/20ca47df8103cd19bba
   box-sizing: border-box;
   /* border:1px solid red; */
 }
-html {
+box-shadow html {
   font-size: 16px;
   scroll-behavior: smooth;
 }
@@ -98,11 +98,11 @@ p {
 .small {
   padding: 0.5rem 1rem !important;
   font-size: 0.75rem;
-  margin:0;
+  margin: 0;
 }
 .primary-btn:hover {
   background-color: #f5c94f;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.4);
   color: #000;
 }
 header nav {
@@ -169,8 +169,8 @@ header nav .cta img {
 #nav-icon {
   display: none;
 }
-.sidebar{
-  display:none;
+.sidebar {
+  display: none;
 }
 
 /* Footer Styles */
@@ -212,12 +212,13 @@ footer .container .socials div {
 footer .container .socials div > a {
   background-color: white;
   padding: 0.5rem;
-  width:2rem;
+  width: 2rem;
   height: 2rem;
   border-radius: 50%;
   margin: 0 0.5rem;
   display: flex;
-  align-items: center;justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 footer .container .newsletter input {
   padding: 1rem;
@@ -335,13 +336,13 @@ footer .container > div:nth-of-type(3) > div img {
   justify-content: center;
   color: var(--paragraph);
   background-color: #fff;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   z-index: 1000;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
 .wishlist:hover {
-  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
   background-color: #f5c94f;
   color: #000;
 }
@@ -355,7 +356,7 @@ footer .container > div:nth-of-type(3) > div img {
   right: 7rem;
   padding: 1rem;
   border-radius: 1rem;
-  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.5);
   background-color: #fff;
   z-index: 1000;
 }
@@ -519,13 +520,13 @@ footer .container > div:nth-of-type(3) > div img {
 }
 
 @media screen and (max-width: 768px) {
-  header nav ul{
+  header nav ul {
     display: none;
   }
-  header .nav>.first{
-    display:none;
+  header .nav > .first {
+    display: none;
   }
-  .nav{
+  .nav {
     position: relative;
   }
   #nav-icon {
@@ -536,22 +537,22 @@ footer .container > div:nth-of-type(3) > div img {
     display: none;
     position: absolute;
     background-color: red;
-    width:100%;
+    width: 100%;
     /* min-height: 20vh; */
-    top:80%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    top: 80%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     border-radius: 1rem;
     background-color: #f5c94f;
     z-index: 1000;
   }
-  .show-sidebar{
+  .show-sidebar {
     display: flex;
   }
   #sidebar ul {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    margin:auto;
+    margin: auto;
     width: 100%;
     padding: 2rem 1rem;
   }
@@ -561,10 +562,10 @@ footer .container > div:nth-of-type(3) > div img {
     margin-left: auto;
     width: 100%;
     position: relative;
-  } 
-#sidebar ul li::before{
-  content:none;
-}
+  }
+  #sidebar ul li::before {
+    content: none;
+  }
   #sidebar nav ul li a {
     font-size: 0.85rem;
     margin-bottom: 0.5rem;
@@ -576,7 +577,7 @@ footer .container > div:nth-of-type(3) > div img {
     align-items: center;
     justify-content: space-between;
   }
-  .second{
+  .second {
     margin-right: 1rem;
     min-width: 5rem;
   }
