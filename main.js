@@ -6,6 +6,11 @@ let ctaBtn = document.querySelector(".cta>a");
 let rootPath = window.location.pathname.split("/").slice(0, -1).join("/");
 let sidebar = document.querySelector("#sidebar");
 
+window.addEventListener("load", function () {
+  if (!isLoggedIn) {
+    this.localStorage.setItem("loggedIn", false);
+  }
+});
 // let viewportWidth = window.innerWidth;
 // if (viewportWidth < 768) {
 //   ctaBtn = document.querySelector(".second>a");
@@ -54,77 +59,87 @@ wishlistBtn.addEventListener("click", function () {
 function populateWishlistContent(cart) {
   // console.log(cart);
   wishlistContent.innerText = "";
-  if (cart.length > 0) {
-    let content = document.createElement("div");
-    cart.forEach((item, i) => {
-      let subText = document.createElement("span");
-      subText.classList.add("subtitle");
-      if (i == 0) {
-        subText.innerText = "From :";
-      } else {
-        subText.innerText = "To :";
-      }
-      let row = document.createElement("div");
-      row.style.display = "flex";
-      let name = document.createElement("h3");
-      name.innerText = item.name;
-      let price = document.createElement("h4");
-      if (item.updatedPrice) {
-        price.innerText = `$${item.updatedPrice}`;
-      } else {
-        price.innerText = `$${item.price}`;
-      }
-      let remove = document.createElement("button");
-      remove.innerText = "Remove";
-      remove.addEventListener("click", () => {
-        cart.splice(i, 1);
-        localStorage.setItem("wishlist", JSON.stringify(cart));
-        populateWishlistContent(cart);
-        displayTotal();
-      });
-      let selectElement = document.createElement("select");
-      let options = ["Basic", "Premium", "Elite"];
-      for (let i = 0; i < options.length; i++) {
-        let optionElement = document.createElement("option");
-        optionElement.text = options[i];
-        optionElement.value = options[i];
-        selectElement.appendChild(optionElement);
-      }
-      if (item.updatedPrice) {
-        if (item.updatedPrice / 3 == item.price) selectElement.value = "Elite";
-        else if (item.updatedPrice / 2 == item.price)
-          selectElement.value = "Premium";
-        else selectElement.value = "Basic";
-      }
-      selectElement.addEventListener("change", () => {
-        let v = selectElement.value;
-        let updatedPrice;
-        if (v == "Basic") {
-          updatedPrice = item.price;
-        } else if (v == "Elite") {
-          updatedPrice = 3 * item.price;
-        } else if (v == "Premium") {
-          updatedPrice = 2 * item.price;
+  if (isLoggedIn) {
+    // document.querySelector("#estimated").style.display = "block";
+    if (cart.length > 0) {
+      let content = document.createElement("div");
+      cart.forEach((item, i) => {
+        let subText = document.createElement("span");
+        subText.classList.add("subtitle");
+        if (i == 0) {
+          subText.innerText = "From :";
+        } else {
+          subText.innerText = "To :";
         }
-        cart[i].updatedPrice = updatedPrice;
-        price.innerText = `$${updatedPrice}`;
-        localStorage.setItem("wishlist", JSON.stringify(cart));
-        displayTotal();
+        let row = document.createElement("div");
+        row.style.display = "flex";
+        let name = document.createElement("h3");
+        name.innerText = item.name;
+        let price = document.createElement("h4");
+        if (item.updatedPrice) {
+          price.innerText = `$${item.updatedPrice}`;
+        } else {
+          price.innerText = `$${item.price}`;
+        }
+        let remove = document.createElement("button");
+        remove.innerText = "Remove";
+        remove.addEventListener("click", () => {
+          cart.splice(i, 1);
+          localStorage.setItem("wishlist", JSON.stringify(cart));
+          populateWishlistContent(cart);
+          displayTotal();
+        });
+        let selectElement = document.createElement("select");
+        let options = ["Basic", "Premium", "Elite"];
+        for (let i = 0; i < options.length; i++) {
+          let optionElement = document.createElement("option");
+          optionElement.text = options[i];
+          optionElement.value = options[i];
+          selectElement.appendChild(optionElement);
+        }
+        if (item.updatedPrice) {
+          if (item.updatedPrice / 3 == item.price)
+            selectElement.value = "Elite";
+          else if (item.updatedPrice / 2 == item.price)
+            selectElement.value = "Premium";
+          else selectElement.value = "Basic";
+        }
+        selectElement.addEventListener("change", () => {
+          let v = selectElement.value;
+          let updatedPrice;
+          if (v == "Basic") {
+            updatedPrice = item.price;
+          } else if (v == "Elite") {
+            updatedPrice = 3 * item.price;
+          } else if (v == "Premium") {
+            updatedPrice = 2 * item.price;
+          }
+          cart[i].updatedPrice = updatedPrice;
+          price.innerText = `$${updatedPrice}`;
+          localStorage.setItem("wishlist", JSON.stringify(cart));
+          displayTotal();
+        });
+        row.append(name, price, selectElement, remove);
+        let hr = document.createElement("hr");
+        content.append(subText, row, document.createElement("br"), hr);
       });
-      row.append(name, price, selectElement, remove);
-      let hr = document.createElement("hr");
-      content.append(subText, row, document.createElement("br"), hr);
-    });
-    displayTotal();
-    wishlistContent.append(content);
-    buyBtn.classList.add("show-btn");
-    buyBtn.classList.remove("hide-btn");
+      displayTotal();
+      wishlistContent.append(content);
+      buyBtn.classList.add("show-btn");
+      buyBtn.classList.remove("hide-btn");
+    } else {
+      let emptyMsg = document.createElement("h3");
+      emptyMsg.innerText = "Your Cart is empty";
+      buyBtn.classList.add("hide-btn");
+      buyBtn.classList.remove("show-btn");
+      wishlistContent.appendChild(emptyMsg);
+    }
   } else {
-    let emptyMsg = document.createElement("h3");
-    emptyMsg.innerText = "Your Cart is empty";
+    wishlistContent.innerHTML = `<p style="margin-bottom:0.5rem">You are not logged in, please login first</p> <a href='./signup.html' class='primary-btn small'>click here to login</a>`;
+    wishlistContent.classList.add("show");
     buyBtn.classList.add("hide-btn");
     buyBtn.classList.remove("show-btn");
-    wishlistContent.appendChild(emptyMsg);
+    document.querySelector("#estimated").style.display = "none";
   }
 }
 
