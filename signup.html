@@ -83,21 +83,21 @@
       <nav>
         <div class="container">
           <div class="nav">
-            <img src="../images/Travelo Logo.jpg" alt="Travelo Logo" />
+            <img src="./images/Travelo Logo.jpg" alt="Travelo Logo" />
             <ul>
               <li>
                 <a href="/" class="link">Home</a>
-                <a href="" class="link">About Us</a>
+                <a href="./templates/about.html" class="link">About Us</a>
               </li>
               <li>
                 <a href="/templates/destinations.html" class="link"
                   >Destinations</a
                 >
-                <a href="" class="link">Features</a>
+                <a href="./templates/services.html" class="link">Features</a>
               </li>
               <li>
-                <a href="/" class="link">Pricing</a>
-                <a href="" class="link">Reviews</a>
+                <a href="/templates/prices.html" class="link">Pricing</a>
+                <a href="/templates/reviews.html" class="link">Reviews</a>
               </li>
             </ul>
             <div class="cta">
@@ -184,22 +184,31 @@
           <div class="socials">
             <h3>Leading the way in adventure</h3>
             <div>
-              <img src="../images/icons/facebook.svg" alt="Facebook Icon" />
-              <img src="../images/icons/instagram.svg" alt="Instagram Icon" />
-              <img src="../images/icons/twitter.svg" alt="Twitter Icon" />
-              <img src="../images/icons/youtube.svg" alt="Youtube Icon" />
+              <a href="https://www.facebook.com/" target="_blank">
+                <i class="fa-brands fa-facebook-f" style="color: #000000;"></i>
+              </a>
+              
+              <a href="https://www.instagram.com/" target="_blank">
+                <i class="fa-brands fa-instagram" style="color: #000000;"></i>
+              </a>
+              <a href="https://www.twitter.com/" target="_blank">
+                <i class="fa-brands fa-twitter" style="color: #000000;"></i>
+              </a>
+              <a href="https://www.youtube.com/" target="_blank">
+                <i class="fa-brands fa-youtube" style="color: #000000;"></i>
+              </a>
             </div>
           </div>
           <div class="newsletter">
             <h3>Join Our Newsletter</h3>
             <input type="email" placeholder="Enter your e-mail" />
-            <img src="../images/icons/cta-btn.png" alt="Submit Icon" />
+            <img src="./images/icons/cta-btn.png" alt="Submit Icon" />
           </div>
         </div>
         <hr />
         <div>
           <div>
-            <img src="../images/Travelo Logo.jpg" alt="Travelo Logo" />
+            <img src="./images/Travelo Logo.jpg" alt="Travelo Logo" />
             <p>
               Travell plans are not really an instrument themselves but a
               delivery mechanism or strategy for mostly others
@@ -229,14 +238,14 @@
           <p>@2023 travelo | All Rights Reserved</p>
           <div>
             <p>We Accept Payment:</p>
-            <img src="../images/icons/logos_stripe.svg" alt="Stripe Logo" />
-            <img src="../images/icons/Paypal.svg" alt="Paypal Logo" />
-            <img src="../images/icons/Payonner 1.svg" alt="Payoneer Logo" />
+            <img src="./images/icons/logos_stripe.svg" alt="Stripe Logo" />
+            <img src="./images/icons/Paypal.svg" alt="Paypal Logo" />
+            <img src="./images/icons/Payonner 1.svg" alt="Payoneer Logo" />
           </div>
         </div>
       </div>
     </footer>
-    <script src="../main.js"></script>
+    <script src="./main.js"></script>
     <script>
       // Check if the email already exists in local storage
       let loggedIn = JSON.parse(localStorage.getItem("loggedIn"));
