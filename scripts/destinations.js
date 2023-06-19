@@ -1,5 +1,15 @@
 const cities = [
   {
+    name: "Mumbai",
+    country: "India",
+    population: 20000000,
+    attractions: ["Gateway of India", "Marine Drive", "Elephanta Caves"],
+    timezone: "IST",
+    description:
+      "Mumbai is the financial capital of India, known for its bustling city life, iconic landmarks, and vibrant entertainment industry.",
+    price: 6200,
+  },
+  {
     name: "Delhi",
     country: "India",
     population: 20000000,
