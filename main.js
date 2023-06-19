@@ -4,6 +4,19 @@ let buyBtn = document.getElementById("buy");
 let isLoggedIn = JSON.parse(localStorage.getItem("loggedIn"));
 let ctaBtn = document.querySelector(".cta>a");
 let rootPath = window.location.pathname.split("/").slice(0, -1).join("/");
+let sidebar = document.querySelector("#sidebar");
+
+// let viewportWidth = window.innerWidth;
+// if (viewportWidth < 768) {
+//   ctaBtn = document.querySelector(".second>a");
+// }
+// window.addEventListener("resize", () => {
+//   viewportWidth = window.innerWidth;
+// });
+
+function toggleSidebar() {
+  sidebar.classList.toggle("show-sidebar");
+}
 
 if (isLoggedIn) {
   ctaBtn.innerText = "Log Out";
@@ -135,7 +148,7 @@ function displayTotal() {
 // Checkout eventlistener
 buyBtn.addEventListener("click", () => {
   localStorage.setItem("checkout", JSON.stringify(cart));
-  window.location.href = "./templates/checkout.html";
+  window.location.href = "/checkout.html";
 });
 
 // FOR ANIMATION

@@ -40,14 +40,36 @@
                 <a href="./templates/reviews.html" class="link">Reviews</a>
               </li>
             </ul>
-              <div class="cta">
+              <div class="cta first">
                 <a class="primary-btn small">Log In</a>
               </div>
             <i
               class="fa-solid fa-bars"
               style="color: #000000"
               id="nav-icon"
+              onclick="toggleSidebar()"
             ></i>
+            <div id="sidebar" class="sidebar">
+              <ul>
+                <li>
+                  <a href="/" class="link">Home</a>
+                  <a href="/templates/about.html" class="link">About Us</a>
+                </li>
+                <li>
+                  <a href="/templates/destinations.html" class="link"
+                    >Destinations</a
+                  >
+                  <a href="/templates/services.html" class="link">Features</a>
+                </li>
+                <li>
+                  <a href="./templates/prices.html" class="link">Pricing</a>
+                  <a href="./templates/reviews.html" class="link">Reviews</a>
+                </li>
+              </ul>
+              <div class="cta second">
+                <a class="primary-btn small">Log In</a>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
@@ -353,10 +375,19 @@
           <div class="socials">
             <h3>Leading the way in adventure</h3>
             <div>
-              <img src="./images/icons/facebook.svg" alt="Facebook Icon" />
-              <img src="./images/icons/instagram.svg" alt="Instagram Icon" />
-              <img src="./images/icons/twitter.svg" alt="Twitter Icon" />
-              <img src="./images/icons/youtube.svg" alt="Youtube Icon" />
+              <a href="https://www.facebook.com/" target="_blank">
+                <i class="fa-brands fa-facebook-f" style="color: #000000;"></i>
+              </a>
+              
+              <a href="https://www.instagram.com/" target="_blank">
+                <i class="fa-brands fa-instagram" style="color: #000000;"></i>
+              </a>
+              <a href="https://www.twitter.com/" target="_blank">
+                <i class="fa-brands fa-twitter" style="color: #000000;"></i>
+              </a>
+              <a href="https://www.youtube.com/" target="_blank">
+                <i class="fa-brands fa-youtube" style="color: #000000;"></i>
+              </a>
             </div>
           </div>
           <div class="newsletter">
