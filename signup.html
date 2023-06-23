@@ -185,17 +185,17 @@
             <h3>Leading the way in adventure</h3>
             <div>
               <a href="https://www.facebook.com/" target="_blank">
-                <i class="fa-brands fa-facebook-f" style="color: #000000;"></i>
+                <i class="fa-brands fa-facebook-f" style="color: #000000"></i>
               </a>
-              
+
               <a href="https://www.instagram.com/" target="_blank">
-                <i class="fa-brands fa-instagram" style="color: #000000;"></i>
+                <i class="fa-brands fa-instagram" style="color: #000000"></i>
               </a>
               <a href="https://www.twitter.com/" target="_blank">
-                <i class="fa-brands fa-twitter" style="color: #000000;"></i>
+                <i class="fa-brands fa-twitter" style="color: #000000"></i>
               </a>
               <a href="https://www.youtube.com/" target="_blank">
-                <i class="fa-brands fa-youtube" style="color: #000000;"></i>
+                <i class="fa-brands fa-youtube" style="color: #000000"></i>
               </a>
             </div>
           </div>
@@ -282,6 +282,10 @@
           if (user) {
             showLoginSuccessMessage();
             localStorage.setItem("loggedIn", true);
+            if (!user.cart) {
+              user.cart = [];
+            }
+            localStorage.setItem("user-login", JSON.stringify(user));
             resetLoginForm();
             window.location.href = "/";
           } else {

@@ -1035,20 +1035,20 @@ function displayCity(city) {
     let obj = {};
     obj["name"] = city.name;
     obj["price"] = city.price;
-    if (cart.length == 0) {
-      cart.push(obj);
-      localStorage.setItem("wishlist", JSON.stringify(cart));
-      populateWishlistContent(cart);
+    if (userLogin.cart.length == 0) {
+      userLogin.cart.push(obj);
+      localStorage.setItem("user-login", JSON.stringify(userLogin));
+      populateWishlistContent(userLogin.cart);
       displayTotal();
     } else {
       let flag = true;
-      cart.map((el) => {
+      userLogin.cart.map((el) => {
         if (el.name == city.name) flag = false;
       });
       if (flag) {
-        cart.push(obj);
-        localStorage.setItem("wishlist", JSON.stringify(cart));
-        populateWishlistContent(cart);
+        userLogin.cart.push(obj);
+        localStorage.setItem("user-login", JSON.stringify(userLogin));
+        populateWishlistContent(userLogin.cart);
         displayTotal();
       }
     }

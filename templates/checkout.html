@@ -142,14 +142,14 @@
           flex-direction: column;
         } */
         .checkout-container > div:nth-child(2) {
-        background-color: #f5c94f;
-        position: relative;
-        width: 30%;
-      }
-      .checkout-container > div:nth-child(2) > img:nth-child(2) {
-        right: 2rem;
-        margin: 0;
-      }
+          background-color: #f5c94f;
+          position: relative;
+          width: 30%;
+        }
+        .checkout-container > div:nth-child(2) > img:nth-child(2) {
+          right: 2rem;
+          margin: 0;
+        }
       }
     </style>
   </head>
@@ -285,17 +285,17 @@
             <h3>Leading the way in adventure</h3>
             <div>
               <a href="https://www.facebook.com/" target="_blank">
-                <i class="fa-brands fa-facebook-f" style="color: #000000;"></i>
+                <i class="fa-brands fa-facebook-f" style="color: #000000"></i>
               </a>
-              
+
               <a href="https://www.instagram.com/" target="_blank">
-                <i class="fa-brands fa-instagram" style="color: #000000;"></i>
+                <i class="fa-brands fa-instagram" style="color: #000000"></i>
               </a>
               <a href="https://www.twitter.com/" target="_blank">
-                <i class="fa-brands fa-twitter" style="color: #000000;"></i>
+                <i class="fa-brands fa-twitter" style="color: #000000"></i>
               </a>
               <a href="https://www.youtube.com/" target="_blank">
-                <i class="fa-brands fa-youtube" style="color: #000000;"></i>
+                <i class="fa-brands fa-youtube" style="color: #000000"></i>
               </a>
             </div>
           </div>
@@ -355,7 +355,8 @@
   <script>
     let subTotal = document.getElementById("sub-total");
     let grandTotal = document.getElementById("grand-total");
-    let checkoutCart = JSON.parse(localStorage.getItem("checkout"));
+    // let userLogin = JSON.parse(localStorage.getItem("user-login"));
+    let checkoutCart = userLogin.cart;
     let checkoutCartContainer = document.getElementById("checkout-wishlist");
     let tbody = document.querySelector("tbody");
     // console.log(checkoutCart);
@@ -414,8 +415,11 @@
           }
           checkoutCart[i].updatedPrice = updatedPrice;
           price.innerText = `$${updatedPrice}`;
-          localStorage.setItem("wishlist", JSON.stringify(checkoutCart));
-          localStorage.setItem("checkout", JSON.stringify(checkoutCart));
+          userLogin.cart = checkoutCart;
+          localStorage.setItem("user-login", JSON.stringify(userLogin));
+          updateUsers();
+
+          // localStorage.setItem("checkout", JSON.stringify(checkoutCart));
           displaySubTotal();
         });
         tierTD.append(tier);
@@ -439,8 +443,9 @@
         remove.innerText = "Remove";
         remove.addEventListener("click", () => {
           checkoutCart.splice(i, 1);
-          localStorage.setItem("wishlist", JSON.stringify(checkoutCart));
-          localStorage.setItem("checkout", JSON.stringify(checkoutCart));
+          userLogin.cart = checkoutCart;
+          localStorage.setItem("user-login", JSON.stringify(userLogin));
+          updateUsers();
           displayCheckoutCart();
           displaySubTotal();
         });

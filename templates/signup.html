@@ -309,6 +309,10 @@
           if (user) {
             showLoginSuccessMessage();
             localStorage.setItem("loggedIn", true);
+            if (!user.cart) {
+              user.cart = [];
+            }
+            localStorage.setItem("user-login", JSON.stringify(user));
             resetLoginForm();
             window.location.href = "/";
           } else {

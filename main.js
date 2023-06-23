@@ -1,4 +1,6 @@
-let cart = JSON.parse(localStorage.getItem("wishlist")) || [];
+// let cart = JSON.parse(localStorage.getItem("wishlist")) || [];
+let users = JSON.parse(localStorage.getItem("users"));
+let userLogin = JSON.parse(localStorage.getItem("user-login"));
 let total = document.getElementById("total-amount");
 let buyBtn = document.getElementById("buy");
 let isLoggedIn = JSON.parse(localStorage.getItem("loggedIn"));
@@ -6,27 +8,22 @@ let ctaBtn = document.querySelector(".cta>a");
 let rootPath = window.location.pathname.split("/").slice(0, -1).join("/");
 let sidebar = document.querySelector("#sidebar");
 
+console.log(userLogin);
 window.addEventListener("load", function () {
   if (!isLoggedIn) {
     this.localStorage.setItem("loggedIn", false);
   }
 });
-// let viewportWidth = window.innerWidth;
-// if (viewportWidth < 768) {
-//   ctaBtn = document.querySelector(".second>a");
-// }
-// window.addEventListener("resize", () => {
-//   viewportWidth = window.innerWidth;
-// });
 
 function toggleSidebar() {
   sidebar.classList.toggle("show-sidebar");
 }
 
 if (isLoggedIn) {
-  ctaBtn.innerText = "Log Out";
+  ctaBtn.innerHTML = `${userLogin.name}  <i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i>`;
   ctaBtn.addEventListener("click", () => {
     localStorage.setItem("loggedIn", false);
+    localStorage.removeItem("user-login");
     ctaBtn.innerText = "Log In";
     window.location.href = "/";
   });
@@ -52,7 +49,7 @@ let wishlistContent = document.getElementById("wishlist-content");
 let wishlistContainer = document.getElementById("wishlist-container");
 
 wishlistBtn.addEventListener("click", function () {
-  populateWishlistContent(cart);
+  populateWishlistContent(userLogin.cart);
   wishlistContainer.classList.toggle("show");
 });
 
@@ -85,7 +82,8 @@ function populateWishlistContent(cart) {
         remove.innerText = "Remove";
         remove.addEventListener("click", () => {
           cart.splice(i, 1);
-          localStorage.setItem("wishlist", JSON.stringify(cart));
+          userLogin.cart = cart;
+          localStorage.setItem("user-login", JSON.stringify(userLogin));
           populateWishlistContent(cart);
           displayTotal();
         });
@@ -116,7 +114,8 @@ function populateWishlistContent(cart) {
           }
           cart[i].updatedPrice = updatedPrice;
           price.innerText = `$${updatedPrice}`;
-          localStorage.setItem("wishlist", JSON.stringify(cart));
+          userLogin.cart = cart;
+          localStorage.setItem("user-login", JSON.stringify(userLogin));
           displayTotal();
         });
         row.append(name, price, selectElement, remove);
@@ -145,7 +144,7 @@ function populateWishlistContent(cart) {
 
 function getTotal() {
   let sum = 0;
-  let items = JSON.parse(localStorage.getItem("wishlist")) || [];
+  let items = JSON.parse(localStorage.getItem("user-login")).cart || [];
   items.map((el) => {
     if (el.updatedPrice) {
       sum += el.updatedPrice;
@@ -162,9 +161,20 @@ function displayTotal() {
 
 // Checkout eventlistener
 buyBtn.addEventListener("click", () => {
-  localStorage.setItem("checkout", JSON.stringify(cart));
+  // localStorage.setItem("checkout", JSON.stringify(userLogin));
+  updateUsers();
   window.location.href = "/checkout.html";
 });
+function updateUsers() {
+  console.log(users);
+  users.map((user) => {
+    if (user.email === userLogin.email) {
+      user.cart = userLogin.cart;
+    }
+  });
+  console.log(users);
+  localStorage.setItem("users", JSON.stringify(users));
+}
 
 // FOR ANIMATION
 // Select the sections with the fade-in class

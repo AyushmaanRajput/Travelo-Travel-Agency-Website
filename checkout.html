@@ -142,14 +142,14 @@
           flex-direction: column;
         } */
         .checkout-container > div:nth-child(2) {
-        background-color: #f5c94f;
-        position: relative;
-        width: 30%;
-      }
-      .checkout-container > div:nth-child(2) > img:nth-child(2) {
-        right: 2rem;
-        margin: 0;
-      }
+          background-color: #f5c94f;
+          position: relative;
+          width: 30%;
+        }
+        .checkout-container > div:nth-child(2) > img:nth-child(2) {
+          right: 2rem;
+          margin: 0;
+        }
       }
     </style>
   </head>
@@ -359,7 +359,8 @@
   <script>
     let subTotal = document.getElementById("sub-total");
     let grandTotal = document.getElementById("grand-total");
-    let checkoutCart = JSON.parse(localStorage.getItem("checkout"));
+    // let userLogin = JSON.parse(localStorage.getItem("user-login"));
+    let checkoutCart = userLogin.cart;
     let checkoutCartContainer = document.getElementById("checkout-wishlist");
     let tbody = document.querySelector("tbody");
     // console.log(checkoutCart);
@@ -418,8 +419,10 @@
           }
           checkoutCart[i].updatedPrice = updatedPrice;
           price.innerText = `$${updatedPrice}`;
-          localStorage.setItem("wishlist", JSON.stringify(checkoutCart));
-          localStorage.setItem("checkout", JSON.stringify(checkoutCart));
+          userLogin.cart = checkoutCart;
+          localStorage.setItem("user-login", JSON.stringify(userLogin));
+          updateUsers();
+          // localStorage.setItem("checkout", JSON.stringify(checkoutCart));
           displaySubTotal();
         });
         tierTD.append(tier);
@@ -443,8 +446,9 @@
         remove.innerText = "Remove";
         remove.addEventListener("click", () => {
           checkoutCart.splice(i, 1);
-          localStorage.setItem("wishlist", JSON.stringify(checkoutCart));
-          localStorage.setItem("checkout", JSON.stringify(checkoutCart));
+          userLogin.cart = checkoutCart;
+          localStorage.setItem("user-login", JSON.stringify(userLogin));
+          updateUsers();
           displayCheckoutCart();
           displaySubTotal();
         });
