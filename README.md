@@ -6,7 +6,7 @@ This is individual project called Roaming Routes project made by Ayushmaan Rajpu
 * search city
 * suggest cities (most searched)
 * login/signup
-* cart (tourney Mapper)
+* cart (Journey Mapper)
 * checkout
 
 ## Languages Used
