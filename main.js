@@ -49,7 +49,11 @@ let wishlistContent = document.getElementById("wishlist-content");
 let wishlistContainer = document.getElementById("wishlist-container");
 
 wishlistBtn.addEventListener("click", function () {
-  populateWishlistContent(userLogin.cart);
+  if (isLoggedIn) {
+    populateWishlistContent(userLogin.cart);
+  } else {
+    populateWishlistContent([]);
+  }
   wishlistContainer.classList.toggle("show");
 });
 
@@ -84,6 +88,7 @@ function populateWishlistContent(cart) {
           cart.splice(i, 1);
           userLogin.cart = cart;
           localStorage.setItem("user-login", JSON.stringify(userLogin));
+          updateUsers();
           populateWishlistContent(cart);
           displayTotal();
         });
@@ -116,6 +121,7 @@ function populateWishlistContent(cart) {
           price.innerText = `$${updatedPrice}`;
           userLogin.cart = cart;
           localStorage.setItem("user-login", JSON.stringify(userLogin));
+          updateUsers();
           displayTotal();
         });
         row.append(name, price, selectElement, remove);

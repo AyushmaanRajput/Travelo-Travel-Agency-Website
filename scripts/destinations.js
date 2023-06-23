@@ -1048,6 +1048,8 @@ function displayCity(city) {
       if (flag) {
         userLogin.cart.push(obj);
         localStorage.setItem("user-login", JSON.stringify(userLogin));
+        updateUsers();
+        console.log(users);
         populateWishlistContent(userLogin.cart);
         displayTotal();
       }
