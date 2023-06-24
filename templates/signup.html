@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Login/Signup Form</title>
     <style>
       main {
@@ -61,18 +68,19 @@
         border-radius: 5px;
         display: none;
       }
-      #loginForm form,#signupForm form{
-        display:grid;
+      #loginForm form,
+      #signupForm form {
+        display: grid;
         grid-template-columns: 1fr 1fr;
-        gap:1rem;
+        gap: 1rem;
       }
-      input{
-        padding:0.75rem 1.5rem;
+      input {
+        padding: 0.75rem 1.5rem;
         border-radius: 50px;
-        border:none;
-        border:1px solid black;
+        border: none;
+        border: 1px solid black;
       }
-      input:focus{
+      input:focus {
         border-color: #f5c94f;
       }
     </style>
@@ -170,12 +178,7 @@
           <div id="signupForm" class="tabcontent">
             <h3>Signup</h3>
             <form onsubmit="signup(event)">
-              <input
-                type="text"
-                id="signupName"
-                placeholder="Name"
-                required
-              />
+              <input type="text" id="signupName" placeholder="Name" required />
               <input
                 type="email"
                 id="signupEmail"
@@ -212,17 +215,17 @@
             <h3>Leading the way in adventure</h3>
             <div>
               <a href="https://www.facebook.com/" target="_blank">
-                <i class="fa-brands fa-facebook-f" style="color: #000000;"></i>
+                <i class="fa-brands fa-facebook-f" style="color: #000000"></i>
               </a>
-              
+
               <a href="https://www.instagram.com/" target="_blank">
-                <i class="fa-brands fa-instagram" style="color: #000000;"></i>
+                <i class="fa-brands fa-instagram" style="color: #000000"></i>
               </a>
               <a href="https://www.twitter.com/" target="_blank">
-                <i class="fa-brands fa-twitter" style="color: #000000;"></i>
+                <i class="fa-brands fa-twitter" style="color: #000000"></i>
               </a>
               <a href="https://www.youtube.com/" target="_blank">
-                <i class="fa-brands fa-youtube" style="color: #000000;"></i>
+                <i class="fa-brands fa-youtube" style="color: #000000"></i>
               </a>
             </div>
           </div>
