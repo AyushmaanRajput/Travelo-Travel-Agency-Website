@@ -616,4 +616,17 @@ footer .container > div:nth-of-type(3) > div img {
   .hide-btn {
     display: none;
   }
+  footer .container .socials,
+  footer .container .newsletter {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  footer .container .newsletter img {
+    height: 2.5rem;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
 }
